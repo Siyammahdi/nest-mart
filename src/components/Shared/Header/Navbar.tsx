@@ -5,9 +5,9 @@ import { LuLayoutGrid } from 'react-icons/lu';
 
 const Navbar: React.FC = () => {
     return (
-        <div className="border-y text-text py-3">
+        <div className="border-y text-white py-3 bg-primary">
             <div className="container mx-auto flex justify-between items-center">
-                {/* Left Side - Categories and Links */}
+                {/* Left Side */}
                 <div className="flex space-x-12 items-center font-semibold">
                     <button className="bg-[#fdc041] px-4 py-2 rounded font-semibold text-white flex items-center gap-1"><LuLayoutGrid /> Browse All Categories</button>
                     <a href="#" className="hover:text-yellow-400 flex items-center gap-1"><AiOutlineFire /> Hot Deals</a>
@@ -21,11 +21,11 @@ const Navbar: React.FC = () => {
                     <a href="#" className="hover:text-yellow-400">Contact</a>
                 </div>
 
-                {/* Right Side - Support Number */}
+                {/* Right Side */}
                 <div className='flex items-center gap-2'>
                     <span><FaHeadphonesAlt size={32} /></span>
                     <div>
-                        <span className="text-2xl font-semibold text-primary">01774010501</span>
+                        <span className="text-2xl font-semibold text-white">01774010501</span>
                         <p className="ml-2 text-sm">24/7 Support Center</p>
                     </div>
                 </div>

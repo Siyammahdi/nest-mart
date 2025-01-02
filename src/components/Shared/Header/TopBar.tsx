@@ -3,7 +3,7 @@ import React from 'react';
 const TopBar: React.FC = () => {
   return (
     <div className="bg-white py-2 text-sm text-gray-600 border-b border-gray-200">
-      <div className="container mx-auto flex justify-between">
+      <div className="container mx-auto flex justify-between text-gray-500">
         <div className="flex ">
           <a href="#" className="hover:underline border-r pr-4">About Us</a>
           <a href="#" className="hover:underline border-r px-4">My Account</a>

@@ -32,7 +32,7 @@ const SearchBar: React.FC = () => {
         
         {/* Account Icons */}
         <div className="flex space-x-6 items-center text-text">
-        <button className='flex items-center gap-2 text-primary border px-4 py-2 rounded shadow-md'>Become a vendor <FaArrowRightLong className='mt-1' /> </button>
+        <button className='flex items-center gap-2 text-primary border px-4 py-2 rounded shadow-xl shadow-gray-200'>Become a vendor <FaArrowRightLong className='mt-1' /> </button>
           <button className="relative hover:text-primary flex items-center gap-2"><BsArrowRepeat size={24} /> Compare</button>
           <button className="relative hover:text-primary flex items-center gap-2"><FaRegHeart size={22} /> Wishlist</button>
           <button className="relative hover:text-primary flex items-center gap-2"><AiOutlineShoppingCart size={24} /> Cart</button>
