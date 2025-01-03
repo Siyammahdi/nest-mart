@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 
 const BestSell = () => {
@@ -24,15 +24,15 @@ const BestSell = () => {
 
           <button
             onClick={handlePrev}
-            className="p-2 bg-gray-200 h-10 w-10 rounded-full hover:bg-gray-300"
+            className="p-2 bg-gray-100 h-10 w-10 rounded-full text-gray-400 hover:bg-gray-300"
           >
-            &lt;
+            <FaArrowLeft className="m-auto" size={14} />
           </button>
           <button
             onClick={handleNext}
-            className="p-2 bg-gray-200 h-10 w-10 rounded-full hover:bg-gray-300"
+            className="p-2 bg-gray-100 h-10 w-10 rounded-full text-gray-400 hover:bg-gray-300"
           >
-            &gt;
+            <FaArrowRight className="m-auto" size={14} />
           </button>
 
         </div>
@@ -43,7 +43,7 @@ const BestSell = () => {
           <div
             className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 rounded-2xl overflow-hidden"
             style={{
-              backgroundImage: "url('/slider/slider3.png')",
+              backgroundImage: "url('/banner/banner4.png')",
             }}
           >
             <div className="absolute inset-0 flex flex-col justify-start space-y-4 items-start p-4 md:p-12 text-white">
@@ -99,7 +99,7 @@ const BestSell = () => {
                     </h2>
 
                     <div className="flex items-center gap-2 my-2">
-                      <span className="text-green-600 font-bold text-xl">
+                      <span className="text-primary font-bold text-xl">
                         ${item.price.toFixed(2)}
                       </span>
                       <span className="line-through text-gray-500 text-sm">
@@ -112,7 +112,7 @@ const BestSell = () => {
                     <div className="mt-2">
                       <div className="w-full bg-gray-200 h-2 rounded">
                         <div
-                          className="bg-green-500 h-2 rounded"
+                          className="bg-primary h-2 rounded"
                           style={{ width: `${soldPercentage}%` }}
                         ></div>
                       </div>
