@@ -36,13 +36,13 @@ const Carousel: React.FC = () => {
                     <div className="absolute inset-0 flex flex-col justify-center space-y-10 items-start text-start text-white p-28">
                         <h2 className="text-3xl md:text-7xl text-text font-bold">{slide.title}</h2>
                         <p className="text-3xl mt-4 text-gray-500">{slide.description}</p>
-                        <div className="relative mt-6 flex items-center">
+                        <div className="relative mt-6 flex items-center"> 
                             <input
                                 type="email"
                                 placeholder="Your email address"
-                                className="p-5 rounded-full w-[250px] md:w-[450px] text-black focus:outline-none"
+                                className="p-5 rounded-full w-[250px] md:w-[450px] z-10 text-text focus:outline-none"
                             />
-                            <button className="absolute right-0 p-5 px-8 bg-primary hover:bg-primary/70 transition-all duration-200 z-10 text-white rounded-full">
+                            <button className="absolute right-0 p-5 px-8 bg-primary hover:bg-primary/70 transition-all duration-200 z-20 text-white rounded-full">
                                 Subscribe
                             </button>
                         </div>

@@ -1,17 +1,16 @@
-// components/NewsletterSection.tsx
+
 import Image from 'next/image';
 import bg1 from "@/../public/banner/banner5.png";
 
 const Newsletter = () => {
     return (
-        <section className="relative bg-green-50 rounded-3xl p-8 sm:p-16 overflow-hidden">
-            {/* Background image positioned at the bottom-right */}
+        <section className="relative bg-green-100 rounded-3xl p-8 sm:p-16 overflow-hidden">
             <div className="absolute bottom-0 right-0 z-10">
                 <Image
                     src={bg1}
                     alt="Background"
-                    width={600} // Adjust size as needed
-                    height={500} // Adjust size as needed
+                    width={600}
+                    height={500} 
                     className="object-contain"
                 />
             </div>

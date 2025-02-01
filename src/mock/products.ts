@@ -256,3 +256,5 @@ export const topRated: ProductData[] = [
         originalPrice: "$25.80",
     },
 ];
+
+
