@@ -1,15 +1,15 @@
 // pages/index.tsx
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import products from '@/mock/products';
-import Link from 'next/link';
 
-const Popular = () => {
+const Showcase = () => {
     return (
-        <div className="container mx-auto py-8">
-            <h1 className="text-4xl font-semibold text-text mb-6">Popular Products</h1>
-            <div className="grid grid-cols-5 gap-6">
+        <div className="w-4/5 py-8">
+            <h1 className="text-4xl font-semibold text-text mb-6">All Products</h1>
+            <div className="grid grid-cols-4 gap-6">
                 {products.map((product) => (
                     <Link key={product.id} href={`/all-products/${product.id}`} passHref>
                         <div
@@ -66,7 +66,4 @@ const Popular = () => {
     );
 };
 
-
-
-
-export default Popular;
+export default Showcase;
