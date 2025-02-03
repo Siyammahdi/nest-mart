@@ -1,10 +1,10 @@
-"use client"
-
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Shared/Header";
-import Footer from "@/components/Shared/Footer";
-import { usePathname } from "next/navigation";
+import { defaultMetadata } from "@/utils/metadata";
+import LayoutWrapper from "./LayoutWrapper";
+
+// ✅ Server-only metadata
+export const metadata = defaultMetadata;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,19 +21,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname(); 
-  const isAdminRoute = pathname.startsWith("/admin"); 
-
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {!isAdminRoute && <Header />}
-        
-        <main className={`${isAdminRoute ? "w-full bg-gray-100" : "max-w-[1540px] mx-auto "}`}>
-          {children}
-        </main>
-
-        {!isAdminRoute && <Footer />}
+        <LayoutWrapper>{children}</LayoutWrapper> {/* ✅ Client Component */}
       </body>
     </html>
   );
