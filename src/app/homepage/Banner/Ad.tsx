@@ -5,7 +5,7 @@ import { FaArrowRight } from "react-icons/fa";
 const Ad: React.FC = () => {
     return (
         <div>
-            <div className="relative w-full h-[400px] md:h-[270px] mb-4">
+            <div className="relative w-full h-[150px] md:h-[270px] mb-4">
                 <div
                     className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 rounded-2xl overflow-hidden"
                     style={{
@@ -24,7 +24,7 @@ const Ad: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="relative w-full h-[400px] md:h-[210px]">
+            <div className="relative w-full h-[100px] md:h-[210px]">
                 <div
                     className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 rounded-2xl overflow-hidden"
                     style={{

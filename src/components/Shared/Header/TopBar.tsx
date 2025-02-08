@@ -1,22 +1,34 @@
-import React from 'react';
+import React from "react";
 
 const TopBar: React.FC = () => {
   return (
     <div className="bg-white py-2 text-sm text-gray-600 border-b border-gray-200">
-      <div className="container mx-auto flex justify-between text-gray-500">
-        <div className="flex ">
-          <a href="#" className="hover:underline border-r pr-4">About Us</a>
-          <a href="#" className="hover:underline border-r px-4">My Account</a>
-          <a href="#" className="hover:underline border-r px-4">Wishlist</a>
-          <a href="#" className="hover:underline px-4">Order Tracking</a>
+      <div className="container mx-auto flex flex-wrap items-center justify-between gap-2 px-4 md:flex-nowrap">
+        {/* Left Section */}
+        <div className="flex flex-wrap justify-center md:justify-start gap-2 md:gap-4">
+          <a href="#" className="hover:underline border-r pr-2 md:pr-4">About Us</a>
+          <a href="#" className="hover:underline border-r px-2 md:px-4">My Account</a>
+          <a href="#" className="hover:underline border-r px-2 md:px-4">Wishlist</a>
+          <a href="#" className="hover:underline px-2 md:px-4">Order Tracking</a>
         </div>
-        <div>
-          <p className='font-bold text-primary/70'>100% secured delevery without contacting courier</p>
+
+        {/* Center Section */}
+        <div className="w-full text-center md:w-auto">
+          <p className="font-bold text-primary/70 text-xs md:text-sm">
+            100% secured delivery without contacting courier
+          </p>
         </div>
-        <div className="flex">
-          <span>Need help? Call Us: <a href="tel:1800900122" className="text-green-600 hover:underline">+880 1774010501</a></span>
-          <a href="#" className="hover:underline border-r px-4">English</a>
-          <a href="#" className="hover:underline pl-4">INR</a>
+
+        {/* Right Section */}
+        <div className="flex flex-wrap justify-center md:justify-end gap-2 md:gap-4">
+          <span className="text-xs md:text-sm">
+            Need help? Call Us:{" "}
+            <a href="tel:1800900122" className="text-green-600 hover:underline">
+              +880 1774010501
+            </a>
+          </span>
+          <a href="#" className="hover:underline border-r px-2 md:px-4">English</a>
+          <a href="#" className="hover:underline pl-2 md:pl-4">INR</a>
         </div>
       </div>
     </div>

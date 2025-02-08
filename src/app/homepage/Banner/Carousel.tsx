@@ -33,16 +33,16 @@ const Carousel: React.FC = () => {
                         backgroundPosition: "center",
                     }}
                 >
-                    <div className="absolute inset-0 flex flex-col justify-center space-y-10 items-start text-start text-white p-28">
+                    <div className="absolute inset-0 flex flex-col justify-center space-y-10 items-start text-start text-white p-16 md:p-28">
                         <h2 className="text-3xl md:text-7xl text-text font-bold">{slide.title}</h2>
-                        <p className="text-3xl mt-4 text-gray-500">{slide.description}</p>
+                        <p className="text-lg md:text-3xl mt-4 text-gray-500">{slide.description}</p>
                         <div className="relative mt-6 flex items-center"> 
                             <input
                                 type="email"
                                 placeholder="Your email address"
-                                className="p-5 rounded-full w-[250px] md:w-[450px] z-10 text-text focus:outline-none"
+                                className="p-3 md:p-5 rounded-full w-[250px] md:w-[450px] z-10 text-text focus:outline-none placeholder:text-sm "
                             />
-                            <button className="absolute right-0 p-5 px-8 bg-primary hover:bg-primary/70 transition-all duration-200 z-20 text-white rounded-full">
+                            <button className="absolute text-sm md:text-base right-0 p-3 md:p-5 px-6 md:px-8 bg-primary hover:bg-primary/70 transition-all duration-200 z-20 text-white rounded-full">
                                 Subscribe
                             </button>
                         </div>
@@ -84,21 +84,23 @@ export const slides = [
         id: 1,
         title: "Fresh Vegetables Big Discount",
         description: "Save up to 50% off on your first order",
-        background: "/slider/slider1.png", // Replace with your actual image path
+        background: "/slider/slider1.png", 
     },
     {
         id: 2,
         title: "Fresh Fruits",
         description: "Get fresh fruits delivered to your doorsteps",
-        background: "/slider/slider2.png", // Replace with your actual image path
+        background: "/slider/slider2.png", 
     },
     {
         id: 3,
         title: "Organic Products Best Quality",
         description: "Explore our range of organic products",
-        background: "/slider/slider4.png", // Replace with your actual image path
+        background: "/slider/slider4.png", 
     },
 ];
 
 
 export default Carousel;
+
+

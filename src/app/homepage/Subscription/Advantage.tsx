@@ -45,26 +45,28 @@ const Advantage: React.FC = () => {
   ];
 
   return (
-    <div className="flex gap-6 my-8">
-      {cardData.map((card) => (
-        <div
-          key={card.id}
-          className="flex items-start w-full bg-gray-100 rounded-lg p-4 hover:shadow-lg transition-shadow"
-        >
-          <Image
-            src={card.image}
-            alt={card.title}
-            className="rounded-lg mr-4"
-            width={64}
-            height={64}
-          />
-          <div className="space-y-1">
-            <h3 className="text-lg font-semibold text-text">{card.title}</h3>
-            <p className="text-sm text-gray-400">{card.subtitle}</p>
-          </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
+    {cardData.map((card) => (
+      <div
+        key={card.id}
+        className="flex items-start w-full bg-gray-100 rounded-lg p-4 hover:shadow-lg transition-shadow"
+      >
+        <Image
+          src={card.image}
+          alt={card.title}
+          className="rounded-lg mr-3 sm:mr-4"
+          width={56} // Slightly smaller on small screens
+          height={56}
+        />
+        <div className="space-y-1">
+          <h3 className="text-base sm:text-lg font-semibold text-text">
+            {card.title}
+          </h3>
+          <p className="text-xs sm:text-sm text-gray-500">{card.subtitle}</p>
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
+  </div>
   );
 };
 
