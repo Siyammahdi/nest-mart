@@ -33,7 +33,7 @@ const Carousel: React.FC = () => {
                         backgroundPosition: "center",
                     }}
                 >
-                    <div className="absolute inset-0 flex flex-col justify-center space-y-10 items-start text-start text-white p-16 md:p-28">
+                    <div className="absolute inset-0 flex flex-col justify-center space-y-10 items-start text-start text-white p-10 md:p-28">
                         <h2 className="text-3xl md:text-7xl text-text font-bold">{slide.title}</h2>
                         <p className="text-lg md:text-3xl mt-4 text-gray-500">{slide.description}</p>
                         <div className="relative mt-6 flex items-center"> 

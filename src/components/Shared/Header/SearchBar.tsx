@@ -9,7 +9,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 const SearchBar: React.FC = () => {
   return (
-    <div className="bg-white py-4">
+    <div className="bg-white md:py-4">
       <div className="container mx-auto flex flex-wrap items-center justify-between gap-4 px-4 md:flex-nowrap">
         {/* Logo */}
         <div className="flex items-center">
@@ -27,9 +27,9 @@ const SearchBar: React.FC = () => {
           <input
             type="text"
             placeholder="Search for products..."
-            className="w-full px-4 py-3 border-2 border-primary/50 rounded"
+            className="w-full px-4 py-2 md:py-3 border-2 border-primary/50 rounded"
           />
-          <button className="bg-primary text-white px-4 py-2 absolute right-[6px] bottom-[6px] rounded">
+          <button className="bg-primary text-white px-4 py-[6px] md:py-2 absolute right-[4px] md:right-[6px] bottom-[4px] md:bottom-[6px] rounded">
             Search
           </button>
         </div>
@@ -54,9 +54,9 @@ const SearchBar: React.FC = () => {
         </div>
 
         {/* Mobile Icons (Visible only on Small Screens) */}
-        <div className="flex md:hidden justify-between w-full">
+        <div className="flex md:hidden justify-between w-full text-gray-500">
           <button className="relative hover:text-primary flex items-center gap-2">
-            <BsArrowRepeat size={22} />
+            <BsArrowRepeat size={26} />
           </button>
           <button className="hover:text-primary">
             <AiOutlineShoppingCart size={24} />

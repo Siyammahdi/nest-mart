@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
           <div className="flex items-center gap-4">
             {/* Mobile Menu Button */}
             <button
-              className="text-white md:hidden"
+              className={`md:hidden ${isFixed? "text-gray-500" : "text-white"}`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -108,7 +108,7 @@ const Navbar: React.FC = () => {
           >
             <FaTimes size={24} />
           </button>
-          <nav className="flex flex-col space-y-6 text-lg font-semibold mt-12">
+          <nav className="flex flex-col space-y-6 text-lg font-semibold mt-12 text-gray-500">
             <a href="#" className="hover:text-primary flex items-center gap-1">
               <AiOutlineFire /> Hot Deals
             </a>

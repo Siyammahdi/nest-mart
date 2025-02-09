@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { BiCategory } from "react-icons/bi";
+import { FaChevronDown } from "react-icons/fa";
 
 const Categories: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,8 +15,8 @@ const Categories: React.FC = () => {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between px-4 py-2 text-gray-700 font-semibold lg:hidden"
       >
-        Categories
-        {isOpen ? <FaChevronUp /> : <FaChevronDown />}
+        <span className="flex gap-1 items-center"><BiCategory /> Categories</span>
+        <span className={`transition-all ${isOpen? "rotate-180" : ""}`}> <FaChevronDown /> </span>
       </button>
       
       {/* Category List */}

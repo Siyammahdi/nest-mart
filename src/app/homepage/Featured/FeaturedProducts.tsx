@@ -25,9 +25,9 @@ const products = [
 
 const FeaturedProducts = () => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mx-4 md:mx-6">
             {products.map((product) => (
-                <div key={product.id} className="relative w-full h-[400px] md:h-[270px]">
+                <div key={product.id} className="relative w-full h-[150px] md:h-[200px] lg:h-[270px]">
                     <div
                         className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 rounded-2xl overflow-hidden"
                         style={{
@@ -35,7 +35,7 @@ const FeaturedProducts = () => {
                         }}
                     >
                         <div className="absolute inset-0 flex flex-col justify-center space-y-4 items-start p-4 md:p-6 text-white">
-                            <h2 className="text-lg md:text-2xl font-semibold w-3/5 text-text">
+                            <h2 className="text-base md:text-lg lg:text-2xl font-semibold w-3/5 text-text">
                                 {product.title}
                             </h2>
                             <button className="p-1 px-3 text-sm bg-primary hover:bg-primary/70 transition-all duration-200 text-white rounded flex items-center gap-1">

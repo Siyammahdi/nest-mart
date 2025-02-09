@@ -89,7 +89,7 @@ const CustomSlider: React.FC = () => {
             <a href="#" className="hover:text-yellow-400">Vegetables</a>
           </div>
         </div>
-        <div className="mt-4 lg:mt-0 flex space-x-2">
+        <div className="mt-4 lg:mt-0 flex justify-end w-full md:w-fit px-4 md:px-0 space-x-2">
           <button
             onClick={handlePrev}
             className="h-10 w-10 sm:h-12 sm:w-12 bg-gray-100 text-gray-400 p-2 rounded-full hover:bg-gray-200"

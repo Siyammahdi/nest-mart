@@ -27,9 +27,9 @@ const products = [
 
 const Supplier = () => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mx-4">
             {products.map((product) => (
-                <div key={product.id} className="relative w-full h-[300px] md:h-[150px]">
+                <div key={product.id} className="relative w-full h-[130px] md:h-[150px]">
                     <div
                         className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 rounded-xl overflow-hidden"
                         style={{
@@ -37,10 +37,10 @@ const Supplier = () => {
                         }}
                     >
                         <div className="absolute inset-0 ml-[50%] flex flex-col justify-center space-y-4 items-start p-4 md:p-6 text-white">
-                            <h2 className="text-lg md:text-base font-semibold text-text">
+                            <h2 className="text-base md:text-lg font-semibold text-text">
                                 {product.title}
                             </h2>
-                            <button className="text-sm transition-all duration-200 text-gray-500 font-semibold flex items-center gap-1">
+                            <button className="text-xs md:text-sm transition-all duration-200 text-gray-500 font-semibold flex items-center gap-1">
                                Go to supplier <FaArrowRight size={10} />
                             </button>
                         </div>
