@@ -48,12 +48,16 @@ const SearchBar: React.FC = () => {
           <button className="relative hover:text-primary flex items-center gap-2">
             <FaRegHeart size={20} /> Wishlist
           </button>
-          <button className="relative hover:text-primary flex items-center gap-2">
-            <AiOutlineShoppingCart size={22} /> Cart
-          </button>
-          <button className="relative hover:text-primary flex items-center gap-2">
-            <RiUser3Line size={20} /> Account
-          </button>
+          <Link href="/cart">
+            <button className="relative hover:text-primary flex items-center gap-2">
+              <AiOutlineShoppingCart size={22} /> Cart
+            </button>
+          </Link>
+          <Link href="/login">
+            <button className="relative hover:text-primary flex items-center gap-2">
+              <RiUser3Line size={20} /> Account
+            </button>
+          </Link>
         </div>
 
         {/* Mobile Icons (Visible only on Small Screens) */}
