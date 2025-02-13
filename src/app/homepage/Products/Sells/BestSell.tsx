@@ -17,7 +17,7 @@ const BestSell = () => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden my-12 mx-4 md:mx-6 ">
+    <div className="hidden md:block relative w-full overflow-hidden my-12 mx-4 md:mx-6 ">
       <div className="flex justify-between">
         <h2 className="text-4xl font-semibold text-text mb-8">Daily Best Sells</h2>
         <div className="flex gap-2">
