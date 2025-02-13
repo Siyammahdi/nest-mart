@@ -32,15 +32,15 @@ const products = [
     },
 ];
 
-const DealsOfTheDay = () => {
+const DayDeals = () => {
     return (
-        <div className="bg-white  ">
-            <h2 className="text-4xl font-semibold text-text mb-10">Deals Of The Day</h2>
+        <div className="bg-white mx-5 md:mx-0 ">
+            <h2 className=" text-2xl lg:text-4xl font-semibold text-text mb-10">Deals Of The Day</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                 {products.map((product, index) => (
                     <div
                         key={index}
-                        className="relative bg-gray-100 rounded-2xl shadow-md ">
+                        className="relative bg-gray-100 rounded-2xl shadow-md mb-20 md:mb-0 ">
                         <div className=''>
                             <Image
                                 src={product.image}
@@ -79,4 +79,4 @@ const DealsOfTheDay = () => {
     );
 };
 
-export default DealsOfTheDay;
+export default DayDeals;

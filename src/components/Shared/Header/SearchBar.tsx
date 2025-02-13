@@ -6,6 +6,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { RiUser3Line } from "react-icons/ri";
 import { FaArrowRightLong } from "react-icons/fa6";
+import Link from "next/link";
 
 const SearchBar: React.FC = () => {
   return (
@@ -13,13 +14,15 @@ const SearchBar: React.FC = () => {
       <div className="container mx-auto flex flex-wrap items-center justify-between gap-4 px-4 md:flex-nowrap">
         {/* Logo */}
         <div className="flex items-center">
-          <Image
-            src={logo}
-            alt="Nest Mart & Grocery"
-            className="w-32 md:w-44" // Adjusted width for better responsiveness
-            height={100}
-            width={170}
-          />
+          <Link href="/">
+            <Image
+              src={logo}
+              alt="Nest Mart & Grocery"
+              className="w-32 md:w-44" // Adjusted width for better responsiveness
+              height={100}
+              width={170}
+            />
+          </Link>
         </div>
 
         {/* Search Bar */}

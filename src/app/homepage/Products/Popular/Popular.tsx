@@ -36,11 +36,11 @@ const Popular = () => {
                                     width={200}
                                     height={200}
                                 />
-                                <p className="text-xs text-gray-500 mb-1">{product.category}</p>
-                                <h3 className="text-base md:text-lg leading-tight font-semibold text-gray-800 mb-1">
+                                <p className="text-[8px] md:text-xs text-gray-500 md:mb-1">{product.category}</p>
+                                <h3 className="text-sm md:text-base lg::text-lg leading-tight font-semibold text-gray-800 md:mb-1">
                                     {product.title}
                                 </h3>
-                                <p className="text-xs md:text-base text-gray-400 mb-2">By <span className='text-primary'>{product.brand}</span></p>
+                                <p className="text-[8px] md:text-xs lg:text-base text-gray-400 md:mb-2">By <span className='text-primary'>{product.brand}</span></p>
                                 <div className="md:flex items-center justify-between ">
                                     <div className='flex gap-2 md:gap-4 items-center'>
                                         <p className="text-primary font-bold text-base md:text-xl">

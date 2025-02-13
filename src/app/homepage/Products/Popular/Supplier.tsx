@@ -36,7 +36,7 @@ const Supplier = () => {
                             backgroundImage: `url('${product.image}')`,
                         }}
                     >
-                        <div className="absolute inset-0 ml-[50%] flex flex-col justify-center space-y-4 items-start p-4 md:p-6 text-white">
+                        <div className="absolute inset-0 ml-[50%] flex flex-col justify-center  space-y-4 items-start p-4 md:p-6 text-white">
                             <h2 className="text-base md:text-lg font-semibold text-text">
                                 {product.title}
                             </h2>

@@ -17,7 +17,7 @@ const BestSell = () => {
   };
 
   return (
-    <div className="relative w-full mx-auto overflow-hidden my-12">
+    <div className="relative w-full overflow-hidden my-12 mx-4 md:mx-6 ">
       <div className="flex justify-between">
         <h2 className="text-4xl font-semibold text-text mb-8">Daily Best Sells</h2>
         <div className="flex gap-2">
@@ -39,7 +39,7 @@ const BestSell = () => {
       </div>
 
       <div className="flex items-center gap-10">
-        <div className="w-3/4 relative h-[500px] mb-4 z-20">
+        <div className="hidden md:block w-3/4 relative h-[500px] mb-4 z-20">
           <div
             className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 rounded-2xl overflow-hidden"
             style={{

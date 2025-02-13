@@ -6,6 +6,8 @@ import Image from 'next/image';
 import Newsletter from '@/app/homepage/Subscription/Newsletter';
 import { FaCheck } from 'react-icons/fa6';
 import SellerContact from './components/SellerContact';
+import BestSell from '@/app/homepage/Products/Sells/BestSell';
+import Link from 'next/link';
 
 const ProductDetail = () => {
     const pathname = usePathname();
@@ -53,15 +55,17 @@ const ProductDetail = () => {
                     </div>
 
                     <div className='flex gap-4'>
-                        <button className="bg-primary text-white font-semibold px-6 py-2 mt-4 rounded hover:bg-[#fdc041] transition">
-                            Add to Cart
-                        </button>
+                        <Link href="/checkout">
+                            <button className="bg-primary text-white font-semibold px-6 py-2 mt-4 rounded hover:bg-[#fdc041] transition">
+                                Checkout
+                            </button>
+                        </Link>
 
                         <button className="border-2 border-primary text-primary font-semibold px-6 py-2 mt-4 rounded hover:bg-[#fdc041] hover:text-white hover:border-[#fdc041] transition">
                             Add to Wishlist
                         </button>
                         <button className="border-2 border-primary text-primary font-semibold px-6 py-2 mt-4 rounded hover:bg-[#fdc041] hover:text-white hover:border-[#fdc041] transition">
-                            Compare
+                            Add to Cart
                         </button>
                     </div>
 
@@ -98,28 +102,28 @@ const ProductDetail = () => {
                 <h2 className='text-2xl font-semibold text-text' >Descirption</h2>
                 <p className='text-gray-500'>Uninhibited carnally hired played in whimpered dear gorilla koala depending and much yikes off far quetzal goodness and from for grimaced goodness unaccountably and meadowlark near unblushingly crucial scallop tightly neurotic hungrily some and dear furiously this apart.</p>
                 <p className='text-gray-500'>
-                Spluttered narrowly yikes left moth in yikes bowed this that grizzly much hello on spoon-fed that alas rethought much decently richly and wow against the frequent fluidly at formidable acceptably flapped besides and much circa far over the bucolically hey precarious goldfinch mastodon goodness gnashed a jellyfish and one however because.
+                    Spluttered narrowly yikes left moth in yikes bowed this that grizzly much hello on spoon-fed that alas rethought much decently richly and wow against the frequent fluidly at formidable acceptably flapped besides and much circa far over the bucolically hey precarious goldfinch mastodon goodness gnashed a jellyfish and one however because.
                 </p>
             </div>
             <div className='space-y-4 mb-8'>
                 <h2 className='text-2xl font-semibold text-text' >Packaging and Delevery</h2>
                 <p className='text-gray-500'>Laconic overheard dear woodchuck wow this outrageously taut beaver hey hello far meadowlark imitatively egregiously hugged that yikes minimally unanimous pouted flirtatiously as beaver beheld above forward energetic across this jeepers beneficently cockily less a the raucously that magic upheld far so the this where crud then below after jeez enchanting drunkenly more much wow callously irrespective limpet.</p>
                 <p className='text-gray-500'>
-                Scallop or far crud plain remarkably far by thus far iguana lewd precociously and and less rattlesnake contrary caustic wow this near alas and next and pled the yikes articulate about as less cackled dalmatian in much less well jeering for the thanks blindly sentimental whimpered less across objectively fanciful grimaced wildly some wow and rose jeepers outgrew lugubrious luridly irrationally attractively dachshund.
+                    Scallop or far crud plain remarkably far by thus far iguana lewd precociously and and less rattlesnake contrary caustic wow this near alas and next and pled the yikes articulate about as less cackled dalmatian in much less well jeering for the thanks blindly sentimental whimpered less across objectively fanciful grimaced wildly some wow and rose jeepers outgrew lugubrious luridly irrationally attractively dachshund.
                 </p>
             </div>
             <div className='space-y-4 mb-8'>
                 <h2 className='text-2xl font-semibold text-text' >Suggested Use</h2>
                 <p className='text-gray-500'>Refrigeration not necessary.</p>
                 <p className='text-gray-500'>
-                Stir before serving
+                    Stir before serving
                 </p>
             </div>
             <div className='space-y-4'>
                 <h2 className='text-2xl font-semibold text-text' >Warnings</h2>
                 <p className='text-gray-500'>Oil separation occurs naturally. May contain pieces of shell.</p>
                 <p className='text-gray-500'>
-                Made in machinery that processes tree nuts but does not process peanuts, gluten, dairy or soy
+                    Made in machinery that processes tree nuts but does not process peanuts, gluten, dairy or soy
                 </p>
             </div>
             <div className='flex my-12 '>
@@ -143,6 +147,7 @@ const ProductDetail = () => {
             </div>
 
             <Newsletter />
+            <BestSell />
         </div>
     );
 };
