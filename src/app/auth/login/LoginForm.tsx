@@ -1,4 +1,4 @@
-'use client';
+ 'use client';
 
 import { useState } from 'react';
 import { BsEye } from 'react-icons/bs';
@@ -16,8 +16,8 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="flex justify-center items-center my-10">
-      <div className="bg-white p-8 rounded-2xl border w-full">
+    <div className="flex justify-center items-center my-20">
+      <div className="w-1/2 bg-white p-8 rounded-2xl border">
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="block text-gray-700 mb-1">Username or Email Address *</label>
@@ -72,6 +72,10 @@ const LoginForm = () => {
         <div className="mt-4 text-center">
           <a href="#" className="text-primary hover:underline">Lost your password?</a>
         </div>
+      </div>
+      <div className='w-1/2 mx-32 text-center space-y-5'>
+        <h2 className='text-5xl font-semibold text-primary'>Welcome Back</h2>
+        <h4 className='text-3xl text-text'>Login to get a great experience of <span className='text-primary font-semibold'>e-shopping</span></h4>
       </div>
     </div>
   );

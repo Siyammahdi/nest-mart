@@ -6,10 +6,10 @@ const TopBar: React.FC = () => {
       <div className="container mx-auto flex flex-wrap items-center justify-between gap-2 px-4 md:flex-nowrap">
         {/* Left Section */}
         <div className="flex flex-wrap justify-center md:justify-start gap-2 md:gap-4 text-xs md:text-base">
-          <a href="#" className="hover:underline border-r pr-2 md:pr-4">About Us</a>
-          <a href="#" className="hover:underline border-r px-2 md:px-4">My Account</a>
-          <a href="#" className="hover:underline border-r px-2 md:px-4">Wishlist</a>
-          <a href="#" className="hover:underline px-2 md:px-4">Order Tracking</a>
+          <a href="/comming-soon" className="hover:underline border-r pr-2 md:pr-4">About Us</a>
+          <a href="/comming-soon" className="hover:underline border-r px-2 md:px-4">My Account</a>
+          <a href="/comming-soon" className="hover:underline border-r px-2 md:px-4">Wishlist</a>
+          <a href="/comming-soon" className="hover:underline px-2 md:px-4">Order Tracking</a>
         </div>
 
         {/* Center Section */}

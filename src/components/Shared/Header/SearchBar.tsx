@@ -39,15 +39,21 @@ const SearchBar: React.FC = () => {
 
         {/* Account Icons (Hidden on Small Screens) */}
         <div className="hidden md:flex space-x-4 lg:space-x-6 items-center text-text">
-          <button className="flex items-center gap-2 text-primary border px-4 py-2 rounded shadow-xl shadow-gray-200">
-            Become a vendor <FaArrowRightLong className="mt-1" />
-          </button>
-          <button className="relative hover:text-primary flex items-center gap-2">
-            <BsArrowRepeat size={22} /> Compare
-          </button>
-          <button className="relative hover:text-primary flex items-center gap-2">
-            <FaRegHeart size={20} /> Wishlist
-          </button>
+          <Link href="/comming-soon">
+            <button className="flex items-center gap-2 text-primary border px-4 py-2 rounded shadow-xl shadow-gray-200">
+              Become a vendor <FaArrowRightLong className="mt-1" />
+            </button>
+          </Link>
+          <Link href="/comming-soon">
+            <button className="relative hover:text-primary flex items-center gap-2">
+              <BsArrowRepeat size={22} /> Compare
+            </button>
+          </Link>
+          <Link href="/comming-soon">
+            <button className="relative hover:text-primary flex items-center gap-2">
+              <FaRegHeart size={20} /> Wishlist
+            </button>
+          </Link>
           <Link href="/cart">
             <button className="relative hover:text-primary flex items-center gap-2">
               <AiOutlineShoppingCart size={22} /> Cart
