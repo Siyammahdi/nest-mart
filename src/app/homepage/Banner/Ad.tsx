@@ -9,7 +9,7 @@ const Ad: React.FC = () => {
                 <div
                     className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 rounded-2xl overflow-hidden"
                     style={{
-                        backgroundImage: "url('/slider/slider3.png')", // Direct path to public folder
+                        backgroundImage: "url('/slider/slider3.png')",
                     }}
                 >
                     <div className="absolute inset-0  flex flex-col justify-center space-y-4 items-start p-4 md:p-6 text-white">
@@ -28,7 +28,7 @@ const Ad: React.FC = () => {
                 <div
                     className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 rounded-2xl overflow-hidden"
                     style={{
-                        backgroundImage: "url('/slider/slider4.png')", // Direct path to public folder
+                        backgroundImage: "url('/slider/slider4.png')", 
                     }}
                 >
                     <div className="absolute inset-0 flex flex-col justify-center space-y-4 items-start p-4 md:pl-36 text-white">

@@ -1,18 +1,50 @@
- 'use client';
+'use client';
 
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 import { BsEye } from 'react-icons/bs';
 import { IoEyeOff } from 'react-icons/io5';
+import api from '@/api/api'; // Import the API service
+import { useRouter } from 'next/navigation'; // For Next.js navigation
+
+// Define the error response type
+interface ErrorResponse {
+  response?: {
+    data?: {
+      error: string;
+    };
+  };
+}
 
 const SignupForm = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [rememberMe, setRememberMe] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
+  const [name, setName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [rememberMe, setRememberMe] = useState<boolean>(false);
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [message, setMessage] = useState<string>(''); // To display success/error messages
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const router = useRouter(); // For navigation
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log({ email, password, rememberMe });
+    setIsLoading(true);
+    try {
+      const response = await api.register(name, email, password);
+      setMessage(response.message); // Display success message
+      console.log('User registered successfully:', response);
+
+      // Optionally, you can redirect the user to the login page or another page
+      // Example: router.push('/login');
+    } catch (error: unknown) {
+      // Use type assertion to handle the error
+      const err = error as ErrorResponse;
+      setMessage(err.response?.data?.error || 'Registration failed'); // Display error message
+      console.error('Error registering user:', error);
+      router.push('/');
+    } finally {
+      setIsLoading(false);
+
+    }
   };
 
   return (
@@ -20,11 +52,22 @@ const SignupForm = () => {
       <div className="w-1/2 bg-white p-8 rounded-2xl border">
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-gray-700 mb-1">Username or Email Address</label>
+            <label className="block text-gray-700 mb-1">Name</label>
+            <input
+              type="text"
+              value={name}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
+              className="w-full px-4 py-2 border rounded-md focus:ring focus:ring-indigo-300"
+              required
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-gray-700 mb-1">Email Address</label>
             <input
               type="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
               className="w-full px-4 py-2 border rounded-md focus:ring focus:ring-indigo-300"
               required
             />
@@ -36,7 +79,7 @@ const SignupForm = () => {
               <input
                 type={showPassword ? 'text' : 'password'}
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
                 className="w-full px-4 py-2 border rounded-md focus:ring focus:ring-indigo-300"
                 required
               />
@@ -63,12 +106,23 @@ const SignupForm = () => {
 
             <button
               type="submit"
-              className="bg-primary text-white py-2 px-6 rounded-md hover:bg-primary/70 transition"
+              disabled={isLoading}
+              className="bg-primary text-white py-2 px-6 rounded-md hover:bg-primary/70 transition disabled:opacity-50"
             >
-              Sign Up
+              {isLoading ? 'Signing Up...' : 'Sign Up'}
             </button>
           </div>
         </form>
+
+        {/* Display success/error messages */}
+        {message && (
+          <div className="mt-4 text-center">
+            <p className={message.includes('successfully') ? 'text-green-600' : 'text-red-600'}>
+              {message}
+            </p>
+          </div>
+        )}
+
         <div className="mt-4 text-center">
           <a href="#" className="text-primary hover:underline">Lost your password?</a>
         </div>

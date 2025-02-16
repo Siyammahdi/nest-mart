@@ -1,18 +1,47 @@
- 'use client';
+'use client';
 
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 import { BsEye } from 'react-icons/bs';
 import { IoEyeOff } from 'react-icons/io5';
+import api from '@/api/api'; // Import the API service
+import { useRouter } from 'next/navigation'; // For Next.js navigation
 
 const LoginForm = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [rememberMe, setRememberMe] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [rememberMe, setRememberMe] = useState<boolean>(false);
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [message, setMessage] = useState<string>(''); // To display success/error messages
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const router = useRouter(); // For navigation
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log({ email, password, rememberMe });
+    setMessage(''); // Clear previous messages
+    setIsLoading(true);
+    try {
+      const response = await api.login(email, password);
+      setMessage(response.message); // Display success message
+      console.log('User logged in successfully:', response);
+
+      // Store the token and role in localStorage
+      localStorage.setItem('token', response.token);
+      localStorage.setItem('role', response.role);
+
+      // Redirect based on the user's role
+      if (response.role === 'admin') {
+        router.push('/admin/dashboard'); // Redirect to admin dashboard
+      } else {
+        router.push('/'); // Redirect to user dashboard
+      }
+    } catch (error: unknown) {
+      // Use type assertion to handle the error
+      const err = error as { response?: { data?: { error: string } } };
+      setMessage(err.response?.data?.error || 'Login failed'); // Display error message
+      console.error('Error logging in:', error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -24,7 +53,7 @@ const LoginForm = () => {
             <input
               type="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
               className="w-full px-4 py-2 border rounded-md focus:ring focus:ring-indigo-300"
               required
             />
@@ -36,7 +65,7 @@ const LoginForm = () => {
               <input
                 type={showPassword ? 'text' : 'password'}
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
                 className="w-full px-4 py-2 border rounded-md focus:ring focus:ring-indigo-300"
                 required
               />
@@ -63,12 +92,23 @@ const LoginForm = () => {
 
             <button
               type="submit"
-              className="bg-primary text-white py-2 px-6 rounded-md hover:bg-primary/70 transition"
+              disabled={isLoading}
+              className="bg-primary text-white py-2 px-6 rounded-md hover:bg-primary/70 transition disabled:opacity-50"
             >
-              Log in
+              {isLoading ? 'Logging in...' : 'Log in'}
             </button>
           </div>
         </form>
+
+        {/* Display success/error messages */}
+        {message && (
+          <div className="mt-4 text-center">
+            <p className={message.includes('successfully') ? 'text-green-600' : 'text-red-600'}>
+              {message}
+            </p>
+          </div>
+        )}
+
         <div className="mt-4 text-center">
           <a href="#" className="text-primary hover:underline">Lost your password?</a>
         </div>

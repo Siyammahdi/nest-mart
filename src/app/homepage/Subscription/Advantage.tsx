@@ -42,6 +42,12 @@ const Advantage: React.FC = () => {
       title: "Easy returns",
       subtitle: "Within 30 days",
     },
+    {
+      id: 6,
+      image: "/icons/icon6.png",
+      title: "Great Daily Deals",
+      subtitle: "Exclusive discounts every day",
+  },
   ];
 
   return (

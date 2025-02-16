@@ -1,0 +1,422 @@
+[
+    {
+        "name": "Seeds of Organic Red Rice",
+        "category": "Fresh Fruit",
+        "image": "/products/product1.jpg",
+        "brand": "NestFood",
+        "price": 28.85,
+        "originalPrice": 33.20,
+        "discount": 13,
+        "isNewProduct": false,
+        "rating": 1,
+        "stock": 50,
+        "weight": "1kg",
+        "sku": "NF-REDRICE-001",
+        "description": "Our Seeds of Organic Red Rice are a premium selection of high-quality, organic grains packed with nutrients. This rice variety is known for its rich fiber content and natural antioxidants, promoting a healthy diet and lifestyle. Grown without chemicals or pesticides, it retains its authentic flavor and texture. Perfect for preparing wholesome meals, it offers a nutty taste and chewy consistency. Whether cooked as a side dish, added to salads, or used in rice bowls, it enhances the nutritional value of any meal. Enjoy a delicious, healthy alternative with our organic red rice.",
+        "ingredients": ["Organic Red Rice"],
+        "nutritionalInfo": {
+            "calories": 160,
+            "protein": "3g",
+            "fat": "1g",
+            "carbohydrates": "35g",
+            "fiber": "2g"
+        },
+        "reviews": [
+            { "user": "John Doe", "rating": 4, "comment": "Great quality and taste!" },
+            { "user": "Emily Smith", "rating": 5, "comment": "Very fresh and healthy." }
+        ],
+        "tag": "Top Selling"
+    },
+    {
+        "name": "Organic Apple Cider Vinegar",
+        "category": "Beverages",
+        "image": "/products/product2.jpg",
+        "brand": "HealthPlus",
+        "price": 15.99,
+        "originalPrice": 20.00,
+        "discount": 20,
+        "isNewProduct": true,
+        "rating": 4,
+        "stock": 100,
+        "weight": "500ml",
+        "sku": "HP-ACV-002",
+        "description": "Our Organic Apple Cider Vinegar is raw, unfiltered, and infused with the goodness of the mother. It is naturally fermented to preserve its health benefits, making it an excellent choice for digestion, detoxification, and weight management. With no added preservatives, colors, or artificial flavors, it provides a pure and tangy taste. Ideal for salad dressings, marinades, or as a daily health tonic, it helps balance pH levels and boost immunity. Incorporate this versatile vinegar into your diet to enhance overall well-being and experience the benefits of nature’s purest ingredients.",
+        "ingredients": ["Organic Apple Cider Vinegar"],
+        "nutritionalInfo": {
+            "calories": 5,
+            "protein": "0g",
+            "fat": "0g",
+            "carbohydrates": "1g",
+            "fiber": "0g"
+        },
+        "reviews": [
+            { "user": "Sarah Johnson", "rating": 5, "comment": "Excellent for digestion and weight loss!" },
+            { "user": "Mike Lee", "rating": 4, "comment": "Good taste and quality, but a bit pricey." }
+        ],
+        "tag": "Trending Products"
+    },
+    {
+        "name": "Delicious Organic Avocados",
+        "category": "Fresh Vegetables",
+        "image": "/products/product3.jpg",
+        "brand": "GreenFarm",
+        "price": 4.50,
+        "originalPrice": 5.00,
+        "discount": 10,
+        "isNewProduct": true,
+        "rating": 5,
+        "stock": 30,
+        "weight": "3 pieces",
+        "sku": "GF-AVOCADO-003",
+        "description": "Our Delicious Organic Avocados are handpicked at the peak of ripeness to ensure the best flavor and texture. These avocados are creamy, rich, and packed with healthy fats, making them perfect for salads, smoothies, or as a spread on toast. Grown organically without the use of synthetic pesticides or fertilizers, they are a nutritious addition to any diet. Whether you're making guacamole, adding them to a salad, or enjoying them on their own, these avocados will elevate your meals with their fresh and buttery taste.",
+        "ingredients": ["Organic Avocados"],
+        "nutritionalInfo": {
+            "calories": 240,
+            "protein": "3g",
+            "fat": "22g",
+            "carbohydrates": "12g",
+            "fiber": "10g"
+        },
+        "reviews": [
+            { "user": "Jane Wilson", "rating": 5, "comment": "Very fresh and delicious!" },
+            { "user": "Robert Brown", "rating": 5, "comment": "Perfect ripeness and texture." }
+        ],
+        "tag": "Recently Added"
+    },
+    {
+        "name": "Organic Almonds",
+        "category": "Nuts & Seeds",
+        "image": "/products/product4.jpg",
+        "brand": "NutriFoods",
+        "price": 12.99,
+        "originalPrice": 15.00,
+        "discount": 13,
+        "isNewProduct": false,
+        "rating": 4,
+        "stock": 75,
+        "weight": "200g",
+        "sku": "NF-ALMOND-004",
+        "description": "Our Organic Almonds are a premium selection of high-quality nuts, packed with essential nutrients like protein, healthy fats, and fiber. These almonds are grown organically, without the use of synthetic pesticides or fertilizers, ensuring a pure and natural product. Perfect for snacking, baking, or adding to your favorite recipes, they provide a satisfying crunch and a boost of energy. Whether you're enjoying them on their own or incorporating them into your meals, these almonds are a delicious and nutritious choice for a healthy lifestyle.",
+        "ingredients": ["Organic Almonds"],
+        "nutritionalInfo": {
+            "calories": 160,
+            "protein": "6g",
+            "fat": "14g",
+            "carbohydrates": "6g",
+            "fiber": "3g"
+        },
+        "reviews": [
+            { "user": "Alice Davis", "rating": 5, "comment": "These almonds are perfect for my diet!" },
+            { "user": "Mark Green", "rating": 4, "comment": "Fresh and crunchy, but a little too expensive." }
+        ],
+        "tag": "Top Rated"
+    },
+    {
+        "name": "Organic Extra Virgin Olive Oil",
+        "category": "Oils & Vinegars",
+        "image": "/products/product5.jpg",
+        "brand": "PureOlive",
+        "price": 18.50,
+        "originalPrice": 22.00,
+        "discount": 16,
+        "isNewProduct": true,
+        "rating": 5,
+        "stock": 60,
+        "weight": "500ml",
+        "sku": "PO-OLIVEOIL-005",
+        "description": "Our Organic Extra Virgin Olive Oil is cold-pressed from the finest organic olives, ensuring a rich flavor and high nutritional value. This olive oil is perfect for cooking, salad dressings, or drizzling over your favorite dishes. Packed with antioxidants and healthy monounsaturated fats, it supports heart health and adds a delicious touch to your meals. Whether you're sautéing vegetables, marinating meats, or creating a gourmet salad, this olive oil will enhance the flavor and quality of your cooking.",
+        "ingredients": ["Organic Extra Virgin Olive Oil"],
+        "nutritionalInfo": {
+            "calories": 120,
+            "protein": "0g",
+            "fat": "14g",
+            "carbohydrates": "0g",
+            "fiber": "0g"
+        },
+        "reviews": [
+            { "user": "Nina White", "rating": 5, "comment": "Rich flavor, perfect for my salads!" },
+            { "user": "Chris Martin", "rating": 5, "comment": "Best olive oil I have ever tasted." }
+        ],
+        "tag": "Top Selling"
+    },
+    {
+        "name": "Fresh Organic Bananas",
+        "category": "Fresh Fruit",
+        "image": "/products/product6.jpg",
+        "brand": "FruitLand",
+        "price": 2.99,
+        "originalPrice": 3.50,
+        "discount": 14,
+        "isNewProduct": false,
+        "rating": 4,
+        "stock": 100,
+        "weight": "6 pieces",
+        "sku": "FL-BANANA-006",
+        "description": "Our Fresh Organic Bananas are grown in nutrient-rich soil without the use of synthetic pesticides or fertilizers. These bananas are naturally sweet and packed with essential vitamins and minerals, making them a perfect snack for any time of the day. Whether you're enjoying them on their own, adding them to smoothies, or using them in baking, these bananas will provide a delicious and healthy boost to your diet. Their natural sweetness and creamy texture make them a favorite for both kids and adults.",
+        "ingredients": ["Organic Bananas"],
+        "nutritionalInfo": {
+            "calories": 105,
+            "protein": "1g",
+            "fat": "0g",
+            "carbohydrates": "27g",
+            "fiber": "3g"
+        },
+        "reviews": [
+            { "user": "Sam Lee", "rating": 5, "comment": "Perfectly ripe and sweet." },
+            { "user": "Anna Black", "rating": 4, "comment": "Good quality but a bit small." }
+        ],
+        "tag": "Trending Products"
+    },
+    {
+        "name": "Organic Cacao Powder",
+        "category": "Baking Ingredients",
+        "image": "/products/product7.jpg",
+        "brand": "CocoLife",
+        "price": 10.99,
+        "originalPrice": 13.00,
+        "discount": 15,
+        "isNewProduct": true,
+        "rating": 4,
+        "stock": 50,
+        "weight": "200g",
+        "sku": "CL-COCOA-007",
+        "description": "Our Organic Cacao Powder is made from the finest organic cacao beans, carefully processed to retain their rich flavor and nutritional benefits. This cacao powder is perfect for baking, smoothies, or making homemade chocolate. Packed with antioxidants, magnesium, and iron, it supports overall health and adds a deep, chocolatey flavor to your recipes. Whether you're creating decadent desserts or a healthy hot cocoa, this cacao powder will elevate your creations with its pure and natural taste.",
+        "ingredients": ["Organic Cacao Powder"],
+        "nutritionalInfo": {
+            "calories": 50,
+            "protein": "3g",
+            "fat": "3g",
+            "carbohydrates": "12g",
+            "fiber": "8g"
+        },
+        "reviews": [
+            { "user": "Laura Davis", "rating": 5, "comment": "Great for smoothies and baking!" },
+            { "user": "Peter Evans", "rating": 4, "comment": "Good quality but a little bitter." }
+        ],
+        "tag": "Recently Added"
+    },
+    {
+        "name": "Organic Spinach",
+        "category": "Fresh Vegetables",
+        "image": "/products/product8.jpg",
+        "brand": "GreenFarm",
+        "price": 3.00,
+        "originalPrice": 3.50,
+        "discount": 14,
+        "isNewProduct": false,
+        "rating": 5,
+        "stock": 40,
+        "weight": "300g",
+        "sku": "GF-SPINACH-008",
+        "description": "Our Organic Spinach is freshly harvested and packed with essential vitamins and minerals, including iron, calcium, and vitamin K. This spinach is grown organically, without the use of synthetic pesticides or fertilizers, ensuring a pure and nutritious product. Perfect for salads, smoothies, or cooking, it adds a fresh and vibrant touch to your meals. Whether you're making a healthy green smoothie, a hearty soup, or a fresh salad, this spinach will provide a delicious and nutritious boost to your diet.",
+        "ingredients": ["Organic Spinach"],
+        "nutritionalInfo": {
+            "calories": 23,
+            "protein": "3g",
+            "fat": "0g",
+            "carbohydrates": "4g",
+            "fiber": "2g"
+        },
+        "reviews": [
+            { "user": "David White", "rating": 5, "comment": "Very fresh and delicious!" },
+            { "user": "Lena Clark", "rating": 5, "comment": "Perfect for my salads." }
+        ],
+        "tag": "Top Rated"
+    },
+    {
+        "name": "Organic Quinoa",
+        "category": "Grains & Cereals",
+        "image": "/products/product9.jpg",
+        "brand": "EcoGrains",
+        "price": 8.99,
+        "originalPrice": 10.00,
+        "discount": 10,
+        "isNewProduct": true,
+        "rating": 4,
+        "stock": 60,
+        "weight": "500g",
+        "sku": "EG-QUINOA-009",
+        "description": "Our Organic Quinoa is a high-quality, gluten-free grain that is perfect for a nutritious meal. Packed with protein, fiber, and essential amino acids, it is a versatile ingredient that can be used in salads, bowls, or as a side dish. Grown organically without the use of synthetic pesticides or fertilizers, it retains its natural flavor and nutritional benefits. Whether you're looking for a healthy alternative to rice or a protein-packed addition to your meals, this quinoa is an excellent choice.",
+        "ingredients": ["Organic Quinoa"],
+        "nutritionalInfo": {
+            "calories": 120,
+            "protein": "4g",
+            "fat": "2g",
+            "carbohydrates": "21g",
+            "fiber": "3g"
+        },
+        "reviews": [
+            { "user": "George Baker", "rating": 5, "comment": "Great for salads and bowls!" },
+            { "user": "Tina Martin", "rating": 4, "comment": "Tastes great but a little expensive." }
+        ],
+        "tag": "Top Selling"
+    },
+    {
+        "name": "Organic Coconut Oil",
+        "category": "Oils & Vinegars",
+        "image": "/products/product10.jpg",
+        "brand": "CocoPure",
+        "price": 14.50,
+        "originalPrice": 18.00,
+        "discount": 19,
+        "isNewProduct": false,
+        "rating": 5,
+        "stock": 80,
+        "weight": "500ml",
+        "sku": "CP-COCONUTOIL-010",
+        "description": "Our Organic Coconut Oil is a pure and natural product, perfect for cooking, skincare, or haircare. Cold-pressed from fresh organic coconuts, it retains its rich flavor and nutritional benefits. Packed with healthy fats and antioxidants, it supports overall health and adds a delicious touch to your meals. Whether you're using it for cooking, as a moisturizer, or as a hair treatment, this coconut oil is a versatile and essential addition to your daily routine.",
+        "ingredients": ["Organic Coconut Oil"],
+        "nutritionalInfo": {
+            "calories": 120,
+            "protein": "0g",
+            "fat": "14g",
+            "carbohydrates": "0g",
+            "fiber": "0g"
+        },
+        "reviews": [
+            { "user": "Julia Foster", "rating": 5, "comment": "Great for cooking and skincare!" },
+            { "user": "Nick Harris", "rating": 5, "comment": "The best coconut oil I have used!" }
+        ],
+        "tag": "Trending Products"
+    },
+    {
+        "name": "Organic Chia Seeds",
+        "category": "Nuts & Seeds",
+        "image": "/products/product11.jpg",
+        "brand": "SuperSeeds",
+        "price": 9.99,
+        "originalPrice": 12.00,
+        "discount": 17,
+        "isNewProduct": true,
+        "rating": 5,
+        "stock": 90,
+        "weight": "250g",
+        "sku": "SS-CHIA-011",
+        "description": "Our Organic Chia Seeds are a powerhouse of nutrition, packed with omega-3 fatty acids, fiber, and protein. These seeds are perfect for adding to smoothies, yogurt, or baked goods for a nutritional boost. Grown organically without the use of synthetic pesticides or fertilizers, they are a pure and natural product. Whether you're looking to improve your digestion, boost your energy, or add a healthy crunch to your meals, these chia seeds are an excellent choice.",
+        "ingredients": ["Organic Chia Seeds"],
+        "nutritionalInfo": {
+            "calories": 138,
+            "protein": "4.7g",
+            "fat": "8.7g",
+            "carbohydrates": "12g",
+            "fiber": "10g"
+        },
+        "reviews": [
+            { "user": "Emma Johnson", "rating": 5, "comment": "Great for my morning smoothies!" },
+            { "user": "Oliver Smith", "rating": 4, "comment": "High-quality chia seeds, but the packaging could be better." }
+        ],
+        "tag": "Recently Added"
+    },
+    {
+        "name": "Organic Green Tea",
+        "category": "Beverages",
+        "image": "/products/product12.jpg",
+        "brand": "TeaLeaf",
+        "price": 7.50,
+        "originalPrice": 9.00,
+        "discount": 17,
+        "isNewProduct": false,
+        "rating": 4,
+        "stock": 120,
+        "weight": "100g",
+        "sku": "TL-GREENTEA-012",
+        "description": "Our Organic Green Tea is made from the finest organic tea leaves, carefully harvested and processed to retain their natural flavor and health benefits. Rich in antioxidants, it supports overall health and provides a refreshing and calming drink. Whether you're enjoying it hot or cold, this green tea is perfect for any time of the day. Its light and delicate flavor make it a favorite among tea lovers.",
+        "ingredients": ["Organic Green Tea Leaves"],
+        "nutritionalInfo": {
+            "calories": 2,
+            "protein": "0g",
+            "fat": "0g",
+            "carbohydrates": "0g",
+            "fiber": "0g"
+        },
+        "reviews": [
+            { "user": "Sophia Brown", "rating": 5, "comment": "Very refreshing and high-quality tea!" },
+            { "user": "Liam Wilson", "rating": 4, "comment": "Good taste, but a bit pricey for the quantity." }
+        ],
+        "tag": "Top Rated"
+    },
+    
+    {
+        "name": "Organic Dark Chocolate",
+        "category": "Snacks",
+        "image": "/products/product13.jpg",
+        "brand": "ChocoHeaven",
+        "price": 6.99,
+        "originalPrice": 8.50,
+        "discount": 18,
+        "isNewProduct": true,
+        "rating": 5,
+        "stock": 70,
+        "weight": "150g",
+        "sku": "CH-DARKCHOCO-013",
+        "description": "Our Organic Dark Chocolate is made from the finest organic cocoa beans, carefully processed to retain their rich flavor and nutritional benefits. With 85% cocoa content, it is rich in antioxidants and provides a deep, chocolatey flavor. Perfect for a healthy and indulgent treat, this dark chocolate is a guilt-free way to satisfy your sweet tooth. Whether you're enjoying it on its own or using it in baking, this chocolate will elevate your creations with its pure and natural taste.",
+        "ingredients": ["Organic Cocoa", "Organic Cane Sugar"],
+        "nutritionalInfo": {
+            "calories": 170,
+            "protein": "2g",
+            "fat": "12g",
+            "carbohydrates": "10g",
+            "fiber": "3g"
+        },
+        "reviews": [
+            { "user": "Mia Davis", "rating": 5, "comment": "Absolutely delicious and guilt-free!" },
+            { "user": "Noah Taylor", "rating": 4, "comment": "Great taste, but a bit too bitter for my liking." }
+        ]
+    },
+
+    {
+        "name": "Organic Blueberries",
+        "category": "Fresh Fruit",
+        "image": "/products/product14.jpg",
+        "brand": "BerryGood",
+        "price": 5.99,
+        "originalPrice": 7.00,
+        "discount": 14,
+        "isNewProduct": true,
+        "rating": 5,
+        "stock": 50,
+        "weight": "500g",
+        "sku": "BG-BLUEBERRY-014",
+        "description": "Our Organic Blueberries are handpicked at the peak of ripeness to ensure the best flavor and texture. These blueberries are sweet, juicy, and packed with antioxidants, making them perfect for snacking, baking, or adding to your favorite recipes. Grown organically without the use of synthetic pesticides or fertilizers, they are a nutritious addition to any diet. Whether you're enjoying them on their own, adding them to smoothies, or using them in baking, these blueberries will provide a delicious and healthy boost to your meals.",
+        "ingredients": ["Organic Blueberries"],
+        "nutritionalInfo": {
+            "calories": 85,
+            "protein": "1g",
+            "fat": "0g",
+            "carbohydrates": "21g",
+            "fiber": "4g"
+        },
+        "reviews": [
+            { "user": "Ella Johnson", "rating": 5, "comment": "Sweet and delicious!" },
+            { "user": "James Brown", "rating": 4, "comment": "Great quality, but a bit expensive." }
+        ]
+    },
+    
+    {
+        "name": "Organic Peanut Butter",
+        "category": "Spreads",
+        "image": "/products/product15.jpg",
+        "brand": "NutButter",
+        "price": 8.99,
+        "originalPrice": 10.00,
+        "discount": 10,
+        "isNewProduct": false,
+        "rating": 4,
+        "stock": 60,
+        "weight": "500g",
+        "sku": "NB-PEANUTBUTTER-015",
+        "description": "Our Organic Peanut Butter is made from the finest organic peanuts, carefully roasted and ground to create a smooth and creamy spread. Packed with protein, healthy fats, and essential nutrients, it is a delicious and nutritious addition to your diet. Whether you're spreading it on toast, adding it to smoothies, or using it in baking, this peanut butter will provide a rich and satisfying flavor. Grown organically without the use of synthetic pesticides or fertilizers, it is a pure and natural product.",
+        "ingredients": ["Organic Peanuts"],
+        "nutritionalInfo": {
+            "calories": 190,
+            "protein": "7g",
+            "fat": "16g",
+            "carbohydrates": "6g",
+            "fiber": "2g"
+        },
+        "reviews": [
+            { "user": "Lucas Green", "rating": 5, "comment": "Creamy and delicious!" },
+            { "user": "Sophie White", "rating": 4, "comment": "Great taste, but a bit oily." }
+        ]
+    }
+]

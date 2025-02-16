@@ -1,17 +1,45 @@
-// pages/index.tsx
+"use client"
+
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
-import products from '@/mock/products';
 import Link from 'next/link';
 
+interface Product {
+    _id: number;
+    title: string;
+    image: string;
+    category: string;
+    brand: string;
+    price: number;
+    originalPrice: number;
+    discount: number;
+    isNew: boolean;
+}
+
 const Popular = () => {
+    const [products, setProducts] = useState<Product[]>([]);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const response = await fetch('http://localhost:5000/api/products'); // Replace with your API endpoint
+                const data = await response.json();
+                setProducts(data.slice(0, 10)); // Limit to 10 products
+            } catch (error) {
+                console.error('Error fetching products:', error);
+            }
+        };
+
+        fetchProducts();
+    }, []);
+
     return (
-        <div className=" py-8 mx-4 md:mx-6">
+        <div className="py-8 mx-4 md:mx-6">
             <h1 className="text-2xl md:text-4xl font-semibold text-text mb-6">Popular Products</h1>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 {products.map((product) => (
-                    <Link key={product.id} href={`/all-products/${product.id}`} passHref>
+                    <Link key={product._id} href={`/all-products/${product._id}`} passHref>
                         <div
                             className="border rounded-2xl shadow-sm hover:shadow-md transition h-full flex flex-col justify-between overflow-hidden cursor-pointer"
                         >
@@ -65,8 +93,5 @@ const Popular = () => {
         </div>
     );
 };
-
-
-
 
 export default Popular;

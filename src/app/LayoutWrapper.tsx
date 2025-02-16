@@ -8,12 +8,11 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
   const pathname = usePathname();
   const isAdminRoute = pathname.startsWith("/admin") || pathname.startsWith("/auth") || pathname.startsWith("/comming-soon");
 
-
   return (
     <>
       {!isAdminRoute && <Header />}
       <main className={`${isAdminRoute ? "w-full bg-gray-100" : "max-w-[1540px] mx-auto"}`}>
-          {children}
+        {children}
       </main>
       {!isAdminRoute && <Footer />}
     </>

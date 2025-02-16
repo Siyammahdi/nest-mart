@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 import { AiOutlineFire } from "react-icons/ai";
 import { FaHeadphonesAlt, FaBars, FaTimes } from "react-icons/fa";
@@ -41,23 +42,41 @@ const Navbar: React.FC = () => {
         <div className="container mx-auto flex justify-between items-center px-4">
           {/* Left Side */}
           <div className="flex items-center gap-6 md:gap-12">
-            <button className="bg-[#fdc041] px-4 py-2 rounded font-semibold text-white flex items-center gap-2">
-              <LuLayoutGrid /> <span className="hidden sm:inline">Browse All Categories</span>
-            </button>
+            <Link href="/all-products">
+              <button className="bg-[#fdc041] hover:bg-white hover:text-[#fdc041] transition-colors px-4 py-2 rounded font-semibold text-white flex items-center gap-2">
+                <LuLayoutGrid /> <span className="hidden sm:inline">Browse All Categories</span>
+              </button>
+            </Link>
 
             {/* Desktop Navigation (Hidden on Mobile) */}
             <nav className="hidden md:flex space-x-6 font-semibold">
               <a href="#" className="hover:text-yellow-400 flex items-center gap-1">
                 <AiOutlineFire /> Hot Deals
               </a>
-              <a href="#" className="hover:text-yellow-400">Home</a>
-              <a href="#" className="hover:text-yellow-400">About</a>
-              <a href="#" className="hover:text-yellow-400">Shop</a>
-              <a href="#" className="hover:text-yellow-400">Mega Menu</a>
-              <a href="#" className="hover:text-yellow-400">Vendors</a>
-              <a href="#" className="hover:text-yellow-400">Blog</a>
-              <a href="#" className="hover:text-yellow-400">Pages</a>
-              <a href="#" className="hover:text-yellow-400">Contact</a>
+              <Link href="/">
+                <span className="hover:text-yellow-400">Home</span>
+              </Link>
+              <Link href="/about">
+                <span className="hover:text-yellow-400">About</span>
+              </Link>
+              <Link href="/all-products">
+                <span className="hover:text-yellow-400">Shop</span>
+              </Link>
+              <Link href="/comming-soon">
+                <span className="hover:text-yellow-400">Mega Menu</span>
+              </Link>
+              <Link href="/comming-soon">
+                <span className="hover:text-yellow-400">Vendors</span>
+              </Link>
+              <Link href="/comming-soon">
+                <span className="hover:text-yellow-400">Blog</span>
+              </Link>
+              <Link href="/comming-soon">
+                <span className="hover:text-yellow-400">Pages</span>
+              </Link>
+              <Link href="/comming-soon">
+                <span className="hover:text-yellow-400">Contact</span>
+              </Link>
             </nav>
           </div>
 
@@ -65,7 +84,7 @@ const Navbar: React.FC = () => {
           <div className="flex items-center gap-4">
             {/* Mobile Menu Button */}
             <button
-              className={`md:hidden ${isFixed? "text-gray-500" : "text-white"}`}
+              className={`md:hidden ${isFixed ? "text-gray-500" : "text-white"}`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -114,7 +133,9 @@ const Navbar: React.FC = () => {
             </a>
             <a href="#" className="hover:text-primary">Home</a>
             <a href="#" className="hover:text-primary">About</a>
-            <a href="#" className="hover:text-primary">Shop</a>
+            <Link href="/all-products">
+              <span className="hover:text-primary">Shop</span>
+            </Link>
             <a href="#" className="hover:text-primary">Mega Menu</a>
             <a href="#" className="hover:text-primary">Vendors</a>
             <a href="#" className="hover:text-primary">Blog</a>
