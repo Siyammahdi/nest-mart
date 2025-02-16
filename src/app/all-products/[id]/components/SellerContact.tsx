@@ -10,7 +10,7 @@ const SellerContact: React.FC = () => {
   };
 
   return (
-    <div className="bg-green-100 ml-10 rounded-lg overflow-hidden ">
+    <div className="bg-green-100 lg:ml-10 my-5 rounded-lg overflow-hidden ">
       <div className="p-4">
         <h2 className="text-xl font-semibold text-gray-800">{seller.name}</h2>
         <p className="text-gray-600">{seller.title}</p>

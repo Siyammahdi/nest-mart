@@ -27,7 +27,7 @@ const products = [
 
 const Supplier = () => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mx-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {products.map((product) => (
                 <div key={product.id} className="relative w-full h-[130px] md:h-[150px]">
                     <div

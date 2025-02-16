@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 interface Product {
     _id: number;
-    title: string;
+    name: string;
     image: string;
     category: string;
     brand: string;
@@ -23,9 +23,9 @@ const Popular = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/products'); // Replace with your API endpoint
+                const response = await fetch('https://nest-mart-backend.vercel.app/api/products'); 
                 const data = await response.json();
-                setProducts(data.slice(0, 10)); // Limit to 10 products
+                setProducts(data.slice(0, 10)); 
             } catch (error) {
                 console.error('Error fetching products:', error);
             }
@@ -35,7 +35,7 @@ const Popular = () => {
     }, []);
 
     return (
-        <div className="py-8 mx-4 md:mx-6">
+        <div className="py-8">
             <h1 className="text-2xl md:text-4xl font-semibold text-text mb-6">Popular Products</h1>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 {products.map((product) => (
@@ -59,14 +59,14 @@ const Popular = () => {
                             <div className='p-[6px] md:p-4'>
                                 <Image
                                     src={product.image}
-                                    alt={product.title}
+                                    alt={product.name}
                                     className="w-full object-cover md:mb-4"
                                     width={200}
                                     height={200}
                                 />
                                 <p className="text-[8px] md:text-xs text-gray-500 md:mb-1">{product.category}</p>
-                                <h3 className="text-sm md:text-base lg::text-lg leading-tight font-semibold text-gray-800 md:mb-1">
-                                    {product.title}
+                                <h3 className="text-sm md:text-base lg:text-lg leading-tight font-semibold text-gray-800 md:mb-1">
+                                    {product.name}
                                 </h3>
                                 <p className="text-[8px] md:text-xs lg:text-base text-gray-400 md:mb-2">By <span className='text-primary'>{product.brand}</span></p>
                                 <div className="md:flex items-center justify-between ">

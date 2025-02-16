@@ -3,7 +3,7 @@ import ProductDetail from './components/ProductDetail';
 
 const DetailPage = () => {
     return (
-        <div>
+        <div className='mx-4'>
             <ProductDetail />
         </div>
     );

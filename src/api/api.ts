@@ -1,8 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/auth'; // Replace with your backend URL
+const API_URL = 'https://nest-mart-backend.vercel.app/api/auth';
 
-// Define response types
 interface RegisterResponse {
   message: string;
 }

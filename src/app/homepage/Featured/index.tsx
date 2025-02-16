@@ -4,7 +4,7 @@ import FeaturedProducts from './FeaturedProducts';
 
 const Featured = () => {
     return (
-        <div>
+        <div className='mx-4'>
             <CategorySlider />
             <FeaturedProducts />
         </div>

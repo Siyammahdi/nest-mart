@@ -25,7 +25,7 @@ const products = [
 
 const FeaturedProducts = () => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mx-4 md:mx-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {products.map((product) => (
                 <div key={product.id} className="relative w-full h-[150px] md:h-[200px] lg:h-[270px]">
                     <div

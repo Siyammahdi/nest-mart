@@ -7,7 +7,7 @@ import Trending from './Trending/Trending';
 
 const Products = () => {
     return (
-        <div>
+        <div className='mx-4'>
             <Popular />
             <Supplier />
             <BestSell />

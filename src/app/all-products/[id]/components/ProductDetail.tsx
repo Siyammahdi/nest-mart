@@ -46,14 +46,14 @@ const ProductDetail = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []); 
+    }, []);
 
     useEffect(() => {
         const fetchProduct = async () => {
             if (!productId) return;
 
             try {
-                const response = await fetch(`http://localhost:5000/api/products/${productId}`);
+                const response = await fetch(`https://nest-mart-backend.vercel.app/api/products/${productId}`);
                 const data = await response.json();
                 setProduct(data);
             } catch (error) {
@@ -74,8 +74,8 @@ const ProductDetail = () => {
 
     return (
         <div className="container mx-auto py-8">
-            <div className="flex gap-12">
-                <div className="w-1/2 flex justify-start items-center">
+            <div className="flex flex-col md:flex-row  lg:gap-12">
+                <div className="lg:w-1/2 flex justify-start items-center">
                     <Image
                         src={product.image}
                         alt={product.name}
@@ -84,8 +84,8 @@ const ProductDetail = () => {
                         className="object-cover border rounded-3xl"
                     />
                 </div>
-                <div className="w-1/2">
-                    <h1 className="text-4xl text-text font-bold">{product.name}</h1>
+                <div className="lg:w-1/2">
+                    <h1 className="text-4xl text-text font-bold mt-10 md:mt-0">{product.name}</h1>
                     <p className="text-lg text-gray-600 my-4">{product.category}</p>
                     <p className="text-3xl text-[#fdc041] font-semibold mt-2">
                         ${product.price.toFixed(2)}{' '}
@@ -95,7 +95,7 @@ const ProductDetail = () => {
                         <span className="text-sm text-green-500 ml-2">({product.discount}% off)</span>
                     </p>
                     <p className="mt-4 text-gray-500 ">{product.description}</p>
-    
+
                     <div className="mt-4">
                         <h3 className="font-semibold text-xl text-text">Nutritional Info:</h3>
                         <ul className="list-disc pl-6 mt-2 ">
@@ -106,22 +106,26 @@ const ProductDetail = () => {
                             <li>Fiber: {product.nutritionalInfo.fiber}</li>
                         </ul>
                     </div>
-    
+
                     <div className='flex gap-4'>
                         <Link href="/checkout">
                             <button className="bg-primary text-white font-semibold px-6 py-2 mt-4 rounded hover:bg-[#fdc041] transition">
                                 Checkout
                             </button>
                         </Link>
-    
-                        <button className="border-2 border-primary text-primary font-semibold px-6 py-2 mt-4 rounded hover:bg-[#fdc041] hover:text-white hover:border-[#fdc041] transition">
-                            Add to Wishlist
-                        </button>
-                        <button className="border-2 border-primary text-primary font-semibold px-6 py-2 mt-4 rounded hover:bg-[#fdc041] hover:text-white hover:border-[#fdc041] transition">
-                            Add to Cart
-                        </button>
+
+                        <Link href="/">
+                            <button className="border-2 border-primary text-primary font-semibold px-6 py-2 mt-4 rounded hover:bg-[#fdc041] hover:text-white hover:border-[#fdc041] transition">
+                                Add to Wishlist
+                            </button>
+                        </Link>
+                        <Link href="/">
+                            <button className="border-2 border-primary text-primary font-semibold px-6 py-2 mt-4 rounded hover:bg-[#fdc041] hover:text-white hover:border-[#fdc041] transition">
+                                Add to Cart
+                            </button>
+                        </Link>
                     </div>
-    
+
                     <div className='flex justify-between'>
                         <div>
                             <div className="mt-4">
@@ -132,7 +136,7 @@ const ProductDetail = () => {
                                     ))}
                                 </ul>
                             </div>
-    
+
                             <div className="mt-4">
                                 <h3 className="font-semibold text-xl text-text">Product Details:</h3>
                                 <ul className="list-none pl-6 mt-2">
@@ -150,7 +154,7 @@ const ProductDetail = () => {
                     </div>
                 </div>
             </div>
-            <div className='space-y-4 mb-8'>
+            <div className='space-y-4 mb-8 mt-10 md:mt-0'>
                 <h2 className='text-2xl font-semibold text-text' >Description</h2>
                 <p className='text-gray-500'>{product.description}</p>
             </div>
@@ -168,8 +172,8 @@ const ProductDetail = () => {
                 <p className='text-gray-500'>Oil separation occurs naturally. May contain pieces of shell.</p>
                 <p className='text-gray-500'>Made in machinery that processes tree nuts but does not process peanuts, gluten, dairy or soy</p>
             </div>
-            <div className='flex my-12 '>
-                <div className="w-3/4">
+            <div className='flex flex-col lg:flex-row my-12 '>
+                <div className="lg:w-3/4">
                     <h3 className="font-semibold text-2xl text-text">Reviews:</h3>
                     {product.reviews.map((review, index) => (
                         <div key={index} className="border-t border-gray-300 pt-4">
@@ -183,11 +187,11 @@ const ProductDetail = () => {
                         </div>
                     ))}
                 </div>
-                <div className='w-1/4'>
+                <div className='lg:w-1/4'>
                     <SellerContact />
                 </div>
             </div>
-    
+
             <Newsletter />
             <BestSell />
         </div>

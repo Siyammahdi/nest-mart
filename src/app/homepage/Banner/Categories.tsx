@@ -39,7 +39,7 @@ const Categories: React.FC = () => {
                   width={50}
                   height={50}
                 />
-                <span className="text-gray-700">{category.name}</span>
+                <span className="text-base md:text-sm lg:text-base text-gray-700">{category.name}</span>
               </Link>
             </li>
           ))}

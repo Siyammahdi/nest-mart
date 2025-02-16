@@ -4,7 +4,7 @@ import Advantage from './Advantage';
 
 const Subscription = () => {
     return (
-        <div className='mx-4 md:mx-0'>
+        <div className='mx-4'>
             <Newsletter />
             <Advantage />
         </div>

@@ -50,9 +50,11 @@ const Navbar: React.FC = () => {
 
             {/* Desktop Navigation (Hidden on Mobile) */}
             <nav className="hidden md:flex space-x-6 font-semibold">
-              <a href="#" className="hover:text-yellow-400 flex items-center gap-1">
-                <AiOutlineFire /> Hot Deals
-              </a>
+              <Link href="/all-products">
+                <span className="hover:text-yellow-400 flex items-center gap-1">
+                  <AiOutlineFire /> Hot Deals
+                </span>
+              </Link>
               <Link href="/">
                 <span className="hover:text-yellow-400">Home</span>
               </Link>
