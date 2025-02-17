@@ -64,8 +64,8 @@ const Features: React.FC = () => {
     ];
 
     return (
-        <div>
-            <h2 className="text-text text-3xl text-center font-semibold">What we provide</h2>
+        <div className="mx-4">
+            <h2 className="text-text text-3xl text-center font-semibold ">What we provide</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
                 {cardData.map((card) => (
                     <div

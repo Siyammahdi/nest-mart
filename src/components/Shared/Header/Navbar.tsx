@@ -64,19 +64,19 @@ const Navbar: React.FC = () => {
               <Link href="/all-products">
                 <span className="hover:text-yellow-400">Shop</span>
               </Link>
-              <Link href="/comming-soon">
+              <Link href="/coming-soon">
                 <span className="hover:text-yellow-400">Mega Menu</span>
               </Link>
-              <Link href="/comming-soon">
+              <Link href="/coming-soon">
                 <span className="hover:text-yellow-400">Vendors</span>
               </Link>
-              <Link href="/comming-soon">
+              <Link href="/coming-soon">
                 <span className="hover:text-yellow-400">Blog</span>
               </Link>
-              <Link href="/comming-soon">
+              <Link href="/coming-soon">
                 <span className="hover:text-yellow-400">Pages</span>
               </Link>
-              <Link href="/comming-soon">
+              <Link href="/coming-soon">
                 <span className="hover:text-yellow-400">Contact</span>
               </Link>
             </nav>
@@ -130,19 +130,35 @@ const Navbar: React.FC = () => {
             <FaTimes size={24} />
           </button>
           <nav className="flex flex-col space-y-6 text-lg font-semibold mt-12 text-gray-500">
-            <a href="#" className="hover:text-primary flex items-center gap-1">
-              <AiOutlineFire /> Hot Deals
-            </a>
-            <a href="#" className="hover:text-primary">Home</a>
-            <a href="#" className="hover:text-primary">About</a>
+            <Link href="/all-products">
+              <span className="hover:text-primary flex items-center gap-1">
+                <AiOutlineFire /> Hot Deals
+              </span>
+            </Link>
+            <Link href="/">
+              <span className="hover:text-primary">Home</span>
+            </Link>
+            <Link href="/about">
+              <span className="hover:text-primary">About</span>
+            </Link>
             <Link href="/all-products">
               <span className="hover:text-primary">Shop</span>
             </Link>
-            <a href="#" className="hover:text-primary">Mega Menu</a>
-            <a href="#" className="hover:text-primary">Vendors</a>
-            <a href="#" className="hover:text-primary">Blog</a>
-            <a href="#" className="hover:text-primary">Pages</a>
-            <a href="#" className="hover:text-primary">Contact</a>
+            <Link href="/coming-soon">
+              <span className="hover:text-primary">Mega Menu</span>
+            </Link>
+            <Link href="/coming-soon">
+              <span className="hover:text-primary">Vendors</span>
+            </Link>
+            <Link href="/coming-soon">
+              <span className="hover:text-primary">Blog</span>
+            </Link>
+            <Link href="/coming-soon">
+              <span className="hover:text-primary">Pages</span>
+            </Link>
+            <Link href="/coming-soon">
+              <span className="hover:text-primary">Contact</span>
+            </Link>
           </nav>
         </div>
       </div>
