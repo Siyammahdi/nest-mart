@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
               <Link href="/coming-soon">
                 <span className="hover:text-yellow-400">Vendors</span>
               </Link>
-              <Link href="/coming-soon">
+              <Link href="/blog">
                 <span className="hover:text-yellow-400">Blog</span>
               </Link>
               <Link href="/coming-soon">
@@ -150,7 +150,7 @@ const Navbar: React.FC = () => {
             <Link href="/coming-soon">
               <span className="hover:text-primary">Vendors</span>
             </Link>
-            <Link href="/coming-soon">
+            <Link href="/blog">
               <span className="hover:text-primary">Blog</span>
             </Link>
             <Link href="/coming-soon">
