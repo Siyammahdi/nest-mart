@@ -76,7 +76,7 @@ const Navbar: React.FC = () => {
               <Link href="/coming-soon">
                 <span className="hover:text-yellow-400">Pages</span>
               </Link>
-              <Link href="/coming-soon">
+              <Link href="/contact">
                 <span className="hover:text-yellow-400">Contact</span>
               </Link>
             </nav>
@@ -156,7 +156,7 @@ const Navbar: React.FC = () => {
             <Link href="/coming-soon">
               <span className="hover:text-primary">Pages</span>
             </Link>
-            <Link href="/coming-soon">
+            <Link href="/contact">
               <span className="hover:text-primary">Contact</span>
             </Link>
           </nav>

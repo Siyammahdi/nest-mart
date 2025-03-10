@@ -1,16 +1,18 @@
 import React from 'react';
-
-import Newsletter from '../../homepage/Subscription/Newsletter';
 import SignupForm from './SignupFrom';
+import { Metadata } from 'next';
 
-const LoginPage = () => {
-    return (
-        <div className='max-w-7xl mx-auto py-20'>
-            <h2 className="text-5xl text-text font-semibold mb-4">Sign Up</h2>
-            <SignupForm />
-            <Newsletter />
-        </div>
-    );
+export const metadata: Metadata = {
+  title: 'Sign Up | Nest Mart',
+  description: 'Create a new account at Nest Mart to start shopping and enjoy exclusive benefits.',
 };
 
-export default LoginPage;
+const SignupPage = () => {
+  return (
+    <div className='max-w-7xl h-screen flex flex-col justify-center mx-auto px-4 sm:px-6 lg:px-8 py-12'>
+      <SignupForm />
+    </div>
+  );
+};
+
+export default SignupPage;

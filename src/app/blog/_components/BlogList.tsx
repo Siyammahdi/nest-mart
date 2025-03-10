@@ -10,11 +10,25 @@ export default function BlogList() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch('/api/blog');
+        // Use absolute URLs for production to avoid connection issues
+        const baseUrl = window.location.origin;
+        const response = await fetch(`${baseUrl}/api/blog`, {
+          cache: 'force-cache',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+        
+        if (!response.ok) {
+          throw new Error(`Failed to fetch blog posts: ${response.status}`);
+        }
+        
         const data = await response.json();
         setPosts(data);
       } catch (error) {
         console.error('Error fetching blog posts:', error);
+        // Set empty array to avoid undefined errors
+        setPosts([]);
       } finally {
         setLoading(false);
       }
