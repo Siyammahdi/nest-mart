@@ -1,59 +1,149 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { notFound } from 'next/navigation';
-import type { Metadata } from 'next';
+import { useParams, useRouter } from 'next/navigation';
+import Link from 'next/link';
 import type { BlogPost } from '@/types/blog';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Avatar from '../_components/Avatar';
-import Link from 'next/link';
 
-// This would typically fetch from an API/database
-async function getBlogPost(slug: string): Promise<BlogPost | null> {
-  try {
-    // Use relative URL for API routes in both development and production
-    // This is more reliable than trying to determine the base URL
-    const res = await fetch(`/api/blog?slug=${slug}`, {
-      next: {
-        revalidate: 60
-      },
-      cache: 'force-cache'
-    });
-    
-    if (!res.ok) {
-      if (res.status === 404) {
-        return null;
+// Avatar component for the blog post
+const Avatar = ({ name, size = 40 }: { name: string; size?: number }) => {
+  const initials = name
+    .split(' ')
+    .map(part => part[0])
+    .join('')
+    .toUpperCase()
+    .substring(0, 2);
+
+  return (
+    <div
+      className="rounded-full bg-primary text-white flex items-center justify-center font-medium"
+      style={{ width: size, height: size, fontSize: size * 0.4 }}
+    >
+      {initials}
+    </div>
+  );
+};
+
+export default function BlogPostPage() {
+  const params = useParams();
+  const router = useRouter();
+  const [post, setPost] = useState<BlogPost | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchBlogPost = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        
+        // Get the slug from params
+        const slug = params.slug as string;
+        
+        // Use the current origin to construct the API URL
+        const response = await fetch(`/api/blog?slug=${slug}`);
+        
+        if (!response.ok) {
+          if (response.status === 404) {
+            router.push('/blog/not-found');
+            return;
+          }
+          throw new Error(`Failed to fetch blog post: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        setPost(data);
+        
+        // Update document title
+        if (data && data.title) {
+          document.title = `${data.title} | Nest Mart Blog`;
+        }
+      } catch (err) {
+        console.error('Error fetching blog post:', err);
+        setError('Failed to load blog post. Please try again later.');
+      } finally {
+        setLoading(false);
       }
-      throw new Error(`Failed to fetch blog post: ${res.status}`);
-    }
-
-    return res.json();
-  } catch (error) {
-    console.error('Error fetching blog post:', error);
-    return null;
-  }
-}
-
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = await getBlogPost(params.slug);
-  
-  if (!post) {
-    return {
-      title: 'Post Not Found | Nest Shop Blog',
     };
+
+    fetchBlogPost();
+  }, [params.slug, router]);
+
+  // Loading state
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-white py-8 sm:py-12">
+        <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
+          <div className="animate-pulse">
+            <div className="h-8 bg-gray-200 rounded w-3/4 mb-4"></div>
+            <div className="h-4 bg-gray-200 rounded w-1/2 mb-6"></div>
+            <div className="h-64 bg-gray-200 rounded-lg mb-6"></div>
+            <div className="space-y-3">
+              <div className="h-4 bg-gray-200 rounded w-full"></div>
+              <div className="h-4 bg-gray-200 rounded w-full"></div>
+              <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+              <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
 
-  return {
-    title: `${post.title} | Nest Shop Blog`,
-    description: post.excerpt,
-  };
-}
+  // Error state
+  if (error) {
+    return (
+      <div className="min-h-screen bg-white py-16">
+        <div className="container mx-auto px-4 sm:px-6 max-w-4xl text-center">
+          <h1 className="text-3xl font-bold text-red-600 mb-4">
+            Unable to load blog post
+          </h1>
+          <p className="text-gray-600 mb-8 max-w-md mx-auto">
+            {error}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              onClick={() => window.location.reload()}
+              className="bg-primary text-white py-2 px-6 rounded-md hover:bg-primary-dark transition-colors"
+            >
+              Try again
+            </button>
+            <Link 
+              href="/blog"
+              className="bg-gray-100 text-gray-800 py-2 px-6 rounded-md hover:bg-gray-200 transition-colors"
+            >
+              Return to blog listing
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = await getBlogPost(params.slug);
-
+  // No post state (should not happen due to router.push above, but just in case)
   if (!post) {
-    notFound();
+    return (
+      <div className="min-h-screen bg-white py-16">
+        <div className="container mx-auto px-4 sm:px-6 max-w-4xl text-center">
+          <h1 className="text-3xl font-bold text-gray-800 mb-4">
+            Blog Post Not Found
+          </h1>
+          <p className="text-gray-600 mb-8 max-w-md mx-auto">
+            The blog post you're looking for doesn't exist or may have been removed.
+          </p>
+          <Link 
+            href="/blog"
+            className="bg-primary text-white py-2 px-6 rounded-md hover:bg-primary-dark transition-colors inline-block"
+          >
+            Browse all blog posts
+          </Link>
+        </div>
+      </div>
+    );
   }
 
   // Safely format date
