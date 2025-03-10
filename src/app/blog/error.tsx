@@ -22,7 +22,7 @@ export default function BlogError({
           Something went wrong
         </h1>
         <p className="text-gray-600 mb-8 max-w-md mx-auto">
-          We're sorry, but we encountered an error while loading the blog content. 
+          We&apos;re sorry, but we encountered an error while loading the blog content. 
           This could be due to a temporary connection issue.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
