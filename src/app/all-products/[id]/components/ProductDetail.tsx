@@ -8,6 +8,7 @@ import { FaCheck } from 'react-icons/fa6';
 import BestSell from '@/app/homepage/Products/Sells/BestSell';
 import Link from 'next/link';
 import SellerContact from './SellerContact';
+import { ProductDetailSkeleton } from "@/components/ui/ProductSkeleton";
 
 type Product = {
     _id: string;
@@ -66,7 +67,7 @@ const ProductDetail = () => {
         fetchProduct();
     }, [productId]);
 
-    if (loading) return <div className="text-2xl md:text-3xl text-text my-20 md:my-48 text-center">Loading...</div>;
+    if (loading) return <ProductDetailSkeleton />;
 
     if (!product) {
         return <div className="text-2xl md:text-3xl text-text my-20 md:my-48 text-center">Product not found!</div>;

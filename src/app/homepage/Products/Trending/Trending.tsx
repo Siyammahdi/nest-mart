@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { TrendingProductSkeleton } from "@/components/ui/ProductSkeleton";
 
 interface ProductProps {
     _id: string;
@@ -71,7 +72,7 @@ const Trending = () => {
         fetchProducts();
     }, []);
 
-    if (loading) return <div className="text-2xl h-96 flex justify-center items-center">Loading...</div>;
+    if (loading) return <TrendingProductSkeleton />;
     if (error) return <div>Error: {error}</div>;
 
     return (

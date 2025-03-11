@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import logo from "@/../public/logo.png";
 import { BsArrowRepeat } from "react-icons/bs";
-import { FaRegHeart } from "react-icons/fa";
+import { FaRegHeart, FaUser, FaShoppingBag, FaMapMarkerAlt, FaSignOutAlt, FaTachometerAlt, FaHeart } from 'react-icons/fa';
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { RiUser3Line } from "react-icons/ri";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -36,6 +36,15 @@ const SearchBar: React.FC = () => {
     setUserName(null);
     router.push("/auth/login"); // Redirect to the login page
   };
+
+  // Enhanced dropdown menu items with icons
+  const userMenuItems = [
+    { href: '/dashboard', label: 'Dashboard', icon: <FaTachometerAlt className="mr-2" /> },
+    { href: '/dashboard/profile', label: 'My Profile', icon: <FaUser className="mr-2" /> },
+    { href: '/dashboard/orders', label: 'My Orders', icon: <FaShoppingBag className="mr-2" /> },
+    { href: '/dashboard/wishlist', label: 'My Wishlist', icon: <FaHeart className="mr-2" /> },
+    { href: '/dashboard/addresses', label: 'My Addresses', icon: <FaMapMarkerAlt className="mr-2" /> },
+  ];
 
   return (
     <div className="bg-white md:py-4">
@@ -77,7 +86,7 @@ const SearchBar: React.FC = () => {
               <BsArrowRepeat size={22} /> Compare
             </button>
           </Link>
-          <Link href="/comming-soon">
+          <Link href="/dashboard/wishlist">
             <button className="relative hover:text-primary flex items-center gap-2">
               <FaRegHeart size={20} /> Wishlist
             </button>
@@ -91,13 +100,34 @@ const SearchBar: React.FC = () => {
           {/* Conditionally render login/logout */}
           {isLoggedIn ? (
             <div className="flex items-center gap-2">
-              <span className="text-gray-700">Hi, {userName}</span>
-              <button
-                onClick={handleLogout}
-                className="relative hover:text-primary flex items-center gap-2"
-              >
-                <RiUser3Line size={20} /> Logout
-              </button>
+              <div className="relative group">
+                <span className="text-gray-700 cursor-pointer flex items-center gap-1 hover:text-primary">
+                  <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    {userName ? userName.charAt(0).toUpperCase() : 'U'}
+                  </div>
+                  <span className="ml-1">Hi, {userName || 'User'}</span>
+                </span>
+                <div className="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 z-50 hidden group-hover:block border border-gray-100">
+                  {userMenuItems.map((item, index) => (
+                    <Link 
+                      key={index}
+                      href={item.href} 
+                      className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary"
+                    >
+                      {item.icon}
+                      {item.label}
+                    </Link>
+                  ))}
+                  <div className="border-t border-gray-100 my-1"></div>
+                  <button
+                    onClick={handleLogout}
+                    className="flex items-center w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-500"
+                  >
+                    <FaSignOutAlt className="mr-2" />
+                    Logout
+                  </button>
+                </div>
+              </div>
             </div>
           ) : (
             <Link href="/auth/login">
@@ -113,19 +143,44 @@ const SearchBar: React.FC = () => {
           <button className="relative hover:text-primary flex items-center gap-2">
             <BsArrowRepeat size={26} />
           </button>
-          <button className="hover:text-primary">
-            <AiOutlineShoppingCart size={24} />
-          </button>
-          <button className="hover:text-primary">
-            <FaRegHeart size={24} />
-          </button>
-          {isLoggedIn ? (
-            <button
-              onClick={handleLogout}
-              className="hover:text-primary"
-            >
-              <RiUser3Line size={24} />
+          <Link href="/cart">
+            <button className="hover:text-primary">
+              <AiOutlineShoppingCart size={24} />
             </button>
+          </Link>
+          <Link href="/dashboard/wishlist">
+            <button className="hover:text-primary">
+              <FaRegHeart size={24} />
+            </button>
+          </Link>
+          {isLoggedIn ? (
+            <div className="relative group">
+              <button className="hover:text-primary">
+                <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
+                  {userName ? userName.charAt(0).toUpperCase() : 'U'}
+                </div>
+              </button>
+              <div className="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 z-50 hidden group-hover:block border border-gray-100">
+                {userMenuItems.map((item, index) => (
+                  <Link 
+                    key={index}
+                    href={item.href} 
+                    className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary"
+                  >
+                    {item.icon}
+                    {item.label}
+                  </Link>
+                ))}
+                <div className="border-t border-gray-100 my-1"></div>
+                <button
+                  onClick={handleLogout}
+                  className="flex items-center w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-500"
+                >
+                  <FaSignOutAlt className="mr-2" />
+                  Logout
+                </button>
+              </div>
+            </div>
           ) : (
             <Link href="/auth/login">
               <button className="hover:text-primary">

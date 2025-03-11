@@ -1,13 +1,14 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
-import { BsEye, BsGoogle, BsFacebook, BsApple } from 'react-icons/bs';
+import { BsEye, BsFacebook, BsApple } from 'react-icons/bs';
 import { IoEyeOff } from 'react-icons/io5';
 import { FaLock, FaEnvelope, FaUser } from 'react-icons/fa';
 import api from '@/api/api'; // Import the API service
 import { useRouter } from 'next/navigation'; // For Next.js navigation
 import Link from 'next/link';
 import Image from 'next/image';
+import { FcGoogle } from 'react-icons/fc';
 
 // Define the error response type
 interface ErrorResponse {
@@ -263,7 +264,7 @@ const SignupForm = () => {
                 onClick={() => handleSocialSignup('Google')}
                 className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
               >
-                <BsGoogle className="h-5 w-5 text-red-500" />
+                <FcGoogle className="h-5 w-5 " />
               </button>
               <button
                 onClick={() => handleSocialSignup('Facebook')}

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { ProductCardSkeleton } from "@/components/ui/ProductSkeleton";
 
 const priceFilters = [5, 10, 15, 20, 25, 30];
 const categories = ["Electronics", "Clothing", "Home", "Beauty", "Sports"];
@@ -51,7 +52,34 @@ const Showcase = () => {
             (!selectedBrand || product.brand === selectedBrand)
     );
 
-    if (loading) return <p className="text-2xl md:text-3xl text-text text-center my-20 md:my-52">Loading products...</p>;
+    if (loading) return (
+        <div className="flex flex-col-reverse lg:flex-row gap-4">
+            <div className="lg:w-4/5 py-8 mx-4">
+                <h1 className="text-4xl font-semibold text-text mb-6">All Products</h1>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    {[...Array(8)].map((_, index) => (
+                        <ProductCardSkeleton key={index} />
+                    ))}
+                </div>
+            </div>
+            <div className="lg:w-1/5 p-4 border-l">
+                <div className="animate-pulse">
+                    <div className="h-8 bg-gray-200 rounded w-3/4 md:mt-20 mb-4"></div>
+                    <div className="h-4 bg-gray-200 rounded w-full mb-6"></div>
+                    <div className="h-6 bg-gray-200 rounded w-full mb-4"></div>
+                    <div className="flex flex-wrap gap-2 mt-4">
+                        {[...Array(6)].map((_, i) => (
+                            <div key={i} className="h-8 w-16 bg-gray-200 rounded-lg"></div>
+                        ))}
+                    </div>
+                    <div className="h-6 bg-gray-200 rounded w-1/2 mt-6 mb-2"></div>
+                    <div className="h-10 bg-gray-200 rounded w-full mb-6"></div>
+                    <div className="h-6 bg-gray-200 rounded w-1/2 mt-6 mb-2"></div>
+                    <div className="h-10 bg-gray-200 rounded w-full"></div>
+                </div>
+            </div>
+        </div>
+    );
 
     return (
         <div className={`flex flex-col-reverse lg:flex-row gap-4 ${filteredProducts.length === 0 ? 'border-b' : ''}`}>

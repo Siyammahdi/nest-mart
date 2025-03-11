@@ -7,7 +7,6 @@ import Link from 'next/link';
 import type { BlogPost } from '@/types/blog';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import Avatar from '../_components/Avatar';
 
 // Avatar component for the blog post
 const Avatar = ({ name, size = 40 }: { name: string; size?: number }) => {
