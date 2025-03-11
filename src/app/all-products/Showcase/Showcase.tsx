@@ -161,7 +161,7 @@ const Showcase = () => {
                [&::-webkit-slider-thumb]:bg-white 
                [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 
                [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:appearance-none 
-               [&::-webkit-slider-thumb]:shadow-[0_0_0_2px_theme(colors.primary)] 
+               [&::-webkit-slider-thumb]:shadow-[0_0_0_2px_var(--primary)] 
                [&::-webkit-slider-thumb]:relative [&::-webkit-slider-thumb]:z-10 
                [&::-webkit-slider-thumb]:-mt-1 
                [&::-moz-range-track]:h-2 [&::-moz-range-track]:rounded-full 
@@ -169,7 +169,7 @@ const Showcase = () => {
                [&::-moz-range-progress]:bg-primary 
                [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:w-4 
                [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:rounded-full 
-               [&::-moz-range-thumb]:shadow-[0_0_0_2px_theme(colors.primary)] 
+               [&::-moz-range-thumb]:shadow-[0_0_0_2px_var(--primary)] 
                before:absolute before:top-1/2 before:left-0 before:-translate-y-1/2 
                before:h-2 before:bg-primary before:rounded-full 
                before:w-[calc(var(--value)*100%/30-0.5rem)] before:z-0"

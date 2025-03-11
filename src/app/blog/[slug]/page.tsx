@@ -132,7 +132,7 @@ export default function BlogPostPage() {
             Blog Post Not Found
           </h1>
           <p className="text-gray-600 mb-8 max-w-md mx-auto">
-            The blog post you're looking for doesn't exist or may have been removed.
+            The blog post you&apus;re looking for doesn&apus;t exist or may have been removed.
           </p>
           <Link 
             href="/blog"
@@ -148,8 +148,10 @@ export default function BlogPostPage() {
   // Safely format date
   const formattedDate = (() => {
     try {
+      
       return new Date(post.createdAt).toLocaleDateString();
-    } catch (e) {
+    } catch (error) {
+      console.log(error);
       return 'Unknown date';
     }
   })();

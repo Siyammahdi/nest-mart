@@ -1,10 +1,6 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-import Image from "next/image";
-import { FiEdit } from "react-icons/fi";
-import orders from "@/mock/orders"
-import { MdDeleteOutline } from "react-icons/md";
 import { 
   FaSearch, FaFilter, FaSort, FaEye, 
   FaCheckCircle, FaTruck, FaBox, FaClock, 
@@ -13,8 +9,8 @@ import {
 import Link from 'next/link';
 
 const Orders = () => {
-    const [orders, setOrders] = useState(orders);
-    const [filteredOrders, setFilteredOrders] = useState(orders);
+    const [orders, setOrders] = useState([]);
+    const [filteredOrders, setFilteredOrders] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [statusFilter, setStatusFilter] = useState('All');
     const [paymentStatusFilter, setPaymentStatusFilter] = useState('All');
