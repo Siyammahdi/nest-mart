@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { defaultMetadata } from "@/utils/metadata";
 import LayoutWrapper from "./LayoutWrapper";
+import { CartProvider } from "@/lib/CartContext";
 
 // ✅ Server-only metadata
 export const metadata = defaultMetadata;
@@ -24,9 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <LayoutWrapper>
-          {children}
-        </LayoutWrapper>
+        <CartProvider>
+          <LayoutWrapper>
+            {children}
+          </LayoutWrapper>
+        </CartProvider>
       </body>
     </html>
   );

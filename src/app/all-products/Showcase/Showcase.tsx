@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { ProductCardSkeleton } from "@/components/ui/ProductSkeleton";
+import { useCart } from "@/lib/CartContext";
 
 const priceFilters = [5, 10, 15, 20, 25, 30];
 const categories = ["Electronics", "Clothing", "Home", "Beauty", "Sports"];
@@ -28,6 +29,7 @@ const Showcase = () => {
     const [priceRange, setPriceRange] = useState<number>(30);
     const [selectedCategory, setSelectedCategory] = useState<string>("");
     const [selectedBrand, setSelectedBrand] = useState<string>("");
+    const { addToCart } = useCart();
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -51,6 +53,37 @@ const Showcase = () => {
             (!selectedCategory || product.category === selectedCategory) &&
             (!selectedBrand || product.brand === selectedBrand)
     );
+
+    const handleAddToCart = (e: React.MouseEvent<HTMLButtonElement>, product: Product) => {
+        e.preventDefault(); // Prevent navigation to product detail
+        e.stopPropagation(); // Prevent event bubbling
+        
+        addToCart(product._id, 1, {
+            id: parseInt(product._id),
+            title: product.name,
+            price: product.price,
+            image: product.image,
+            category: product.category,
+            brand: product.brand,
+            originalPrice: product.originalPrice,
+            discount: product.discount,
+            isNew: product.isNew,
+            rating: 5, // Default rating since we don't have it in this component
+            stock: 10, // Default stock since we don't have it in this component
+            weight: '1kg', // Default value
+            sku: `SKU-${product._id}`, // Default value
+            description: '', // Default value
+            ingredients: [], // Default value
+            nutritionalInfo: {
+                calories: 0,
+                protein: '0g',
+                fat: '0g',
+                carbohydrates: '0g',
+                fiber: '0g'
+            },
+            reviews: []
+        });
+    };
 
     if (loading) return (
         <div className="flex flex-col-reverse lg:flex-row gap-4">
@@ -133,7 +166,10 @@ const Showcase = () => {
                                                         </p>
                                                     )}
                                                 </div>
-                                                <button className="bg-primary/20 text-primary font-semibold text-sm px-4 py-2 rounded hover:bg-primary/50 flex justify-center items-center gap-1">
+                                                <button 
+                                                    className="bg-primary/20 text-primary font-semibold text-sm px-4 py-2 rounded hover:bg-primary/50 flex justify-center items-center gap-1"
+                                                    onClick={(e) => handleAddToCart(e, product)}
+                                                >
                                                     <AiOutlineShoppingCart size={18} />
                                                     Add
                                                 </button>

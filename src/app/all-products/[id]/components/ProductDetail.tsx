@@ -5,10 +5,12 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Newsletter from '@/app/homepage/Subscription/Newsletter';
 import { FaCheck } from 'react-icons/fa6';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 import BestSell from '@/app/homepage/Products/Sells/BestSell';
 import Link from 'next/link';
 import SellerContact from './SellerContact';
 import { ProductDetailSkeleton } from "@/components/ui/ProductSkeleton";
+import { useCart } from '@/lib/CartContext';
 
 type Product = {
     _id: string;
@@ -44,6 +46,8 @@ const ProductDetail = () => {
     const productId = pathname?.split('/').pop();
     const [product, setProduct] = useState<Product | null>(null);
     const [loading, setLoading] = useState(true);
+    const [quantity, setQuantity] = useState(1);
+    const { addToCart } = useCart();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -66,6 +70,30 @@ const ProductDetail = () => {
 
         fetchProduct();
     }, [productId]);
+
+    const handleAddToCart = async () => {
+        if (product) {
+            await addToCart(product._id, quantity, {
+                id: parseInt(product._id),
+                title: product.name,
+                price: product.price,
+                image: product.image,
+                category: product.category,
+                brand: product.brand,
+                originalPrice: product.originalPrice,
+                discount: product.discount,
+                isNew: product.isNew,
+                rating: product.reviews.reduce((acc, review) => acc + review.rating, 0) / product.reviews.length,
+                stock: product.stock,
+                weight: product.weight,
+                sku: product.sku,
+                description: product.description,
+                ingredients: product.ingredients,
+                nutritionalInfo: product.nutritionalInfo,
+                reviews: product.reviews
+            });
+        }
+    };
 
     if (loading) return <ProductDetailSkeleton />;
 
@@ -108,6 +136,43 @@ const ProductDetail = () => {
                         </ul>
                     </div>
 
+                    <div className="mt-6 flex items-center gap-4">
+                        <div className="flex items-center border border-gray-300 rounded-md">
+                            <button 
+                                onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
+                                className="px-3 py-1 text-xl"
+                                disabled={quantity <= 1}
+                            >
+                                -
+                            </button>
+                            <span className="px-4 py-1 border-x border-gray-300">{quantity}</span>
+                            <button 
+                                onClick={() => setQuantity(prev => prev + 1)}
+                                className="px-3 py-1 text-xl"
+                                disabled={quantity >= product.stock}
+                            >
+                                +
+                            </button>
+                        </div>
+                        
+                        <button 
+                            onClick={handleAddToCart}
+                            className="flex items-center gap-2 bg-primary text-white px-6 py-2 rounded-md hover:bg-primary/90 transition-colors"
+                            disabled={product.stock === 0}
+                        >
+                            <AiOutlineShoppingCart size={20} />
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    {product.stock === 0 && (
+                        <p className="text-red-500 mt-2">Out of stock</p>
+                    )}
+
+                    {product.stock > 0 && product.stock <= 5 && (
+                        <p className="text-orange-500 mt-2">Only {product.stock} left in stock</p>
+                    )}
+
                     <div className='flex gap-4'>
                         <Link href="/checkout">
                             <button className="bg-primary text-white font-semibold px-6 py-2 mt-4 rounded hover:bg-[#fdc041] transition">
@@ -118,11 +183,6 @@ const ProductDetail = () => {
                         <Link href="/">
                             <button className="border-2 border-primary text-primary font-semibold px-6 py-2 mt-4 rounded hover:bg-[#fdc041] hover:text-white hover:border-[#fdc041] transition">
                                 Add to Wishlist
-                            </button>
-                        </Link>
-                        <Link href="/">
-                            <button className="border-2 border-primary text-primary font-semibold px-6 py-2 mt-4 rounded hover:bg-[#fdc041] hover:text-white hover:border-[#fdc041] transition">
-                                Add to Cart
                             </button>
                         </Link>
                     </div>
