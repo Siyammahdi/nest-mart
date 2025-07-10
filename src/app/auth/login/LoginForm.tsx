@@ -3,7 +3,7 @@
 import { useState, FormEvent } from 'react';
 import { BsEye, BsFacebook, BsApple } from 'react-icons/bs';
 import { IoEyeOff } from 'react-icons/io5';
-import { FaLock, FaEnvelope } from 'react-icons/fa';
+import { FaLock, FaEnvelope, FaUser, FaUserShield } from 'react-icons/fa';
 import api from '@/api/api'; // Import the API service
 import { useRouter } from 'next/navigation'; // For Next.js navigation
 import Link from 'next/link';
@@ -19,6 +19,24 @@ const LoginForm = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [messageType, setMessageType] = useState<'success' | 'error' | ''>('');
   const router = useRouter(); // For navigation
+
+  // Credential presets
+  const credentials = {
+    admin: {
+      email: 'admin@example.com',
+      password: 'Admin123'
+    },
+    user: {
+      email: 'user@example.com',
+      password: 'User123'
+    }
+  };
+
+  const fillCredentials = (type: 'admin' | 'user') => {
+    setEmail(credentials[type].email);
+    setPassword(credentials[type].password);
+  
+  };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -137,6 +155,29 @@ const LoginForm = () => {
                   className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-primary"
                 >
                   {showPassword ? <IoEyeOff size={20} /> : <BsEye size={20} />}
+                </button>
+              </div>
+            </div>
+
+            {/* Credential Buttons */}
+            <div className="mb-6">
+              <label className="block text-gray-700 text-sm font-medium mb-3">Quick Login Credentials</label>
+              <div className="grid grid-cols-2 gap-3">
+                <button
+                  type="button"
+                  onClick={() => fillCredentials('admin')}
+                  className="flex items-center justify-center gap-2 py-2 px-4 border border-blue-300 rounded-lg bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors text-sm font-medium"
+                >
+                  <FaUserShield className="h-4 w-4" />
+                  Admin
+                </button>
+                <button
+                  type="button"
+                  onClick={() => fillCredentials('user')}
+                  className="flex items-center justify-center gap-2 py-2 px-4 border border-green-300 rounded-lg bg-green-50 text-green-700 hover:bg-green-100 transition-colors text-sm font-medium"
+                >
+                  <FaUser className="h-4 w-4" />
+                  User
                 </button>
               </div>
             </div>

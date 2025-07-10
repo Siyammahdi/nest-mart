@@ -25,7 +25,7 @@ Nest Mart & Grocery aims to provide an intuitive, user-friendly interface for cu
 ## ⚙️ Installation & Setup
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/nest-mart.git
+   git clone https://github.com/Siyammahdi/nest-mart.git
    cd nest-mart
    ```
 
@@ -42,9 +42,6 @@ Nest Mart & Grocery aims to provide an intuitive, user-friendly interface for cu
 
 ## 📈 Development Status
 This project is under **active development**. New features, enhancements, and bug fixes are being implemented regularly. Stay tuned for updates as we continue to build and improve Nest Mart & Grocery.
-
-## 🤝 Contributing
-Contributions are welcome! Feel free to fork this repository, make changes, and submit pull requests. If you find any bugs or have feature requests, please open an issue.
 
 ---
 
