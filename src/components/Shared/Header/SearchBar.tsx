@@ -10,11 +10,13 @@ import { RiUser3Line } from "react-icons/ri";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useCart } from "@/lib/CartContext";
 
 const SearchBar: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [userName, setUserName] = useState<string | null>(null);
   const router = useRouter();
+  const { totalItems } = useCart();
 
   // Check if the user is logged in on component mount
   useEffect(() => {
@@ -93,7 +95,15 @@ const SearchBar: React.FC = () => {
           </Link>
           <Link href="/cart">
             <button className="relative hover:text-primary flex items-center gap-2">
-              <AiOutlineShoppingCart size={22} /> Cart
+              <div className="relative">
+                <AiOutlineShoppingCart size={22} />
+                {totalItems > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                    {totalItems}
+                  </span>
+                )}
+              </div>
+              <span>Cart</span>
             </button>
           </Link>
 
@@ -144,8 +154,13 @@ const SearchBar: React.FC = () => {
             <BsArrowRepeat size={26} />
           </button>
           <Link href="/cart">
-            <button className="hover:text-primary">
+            <button className="hover:text-primary relative">
               <AiOutlineShoppingCart size={24} />
+              {totalItems > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                  {totalItems}
+                </span>
+              )}
             </button>
           </Link>
           <Link href="/dashboard/wishlist">
