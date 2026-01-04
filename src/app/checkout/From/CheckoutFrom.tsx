@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useMemo } from "react";
+import { useRouter } from "next/navigation";
 import { HiMiniBuildingOffice2 } from "react-icons/hi2";
 import { IoHome } from "react-icons/io5";
 
@@ -85,6 +86,7 @@ const locationData: Region[] = [
 ];
 
 const CheckoutForm = () => {
+    const router = useRouter();
     const [formData, setFormData] = useState({
         fullName: "",
         phone: "",
@@ -138,6 +140,8 @@ const CheckoutForm = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         console.log("Form Submitted", formData);
+        // Navigate to payment page
+        router.push('/payment');
     };
 
     return (
