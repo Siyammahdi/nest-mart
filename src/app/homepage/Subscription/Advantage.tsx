@@ -16,7 +16,7 @@ const Advantage: React.FC = () => {
       id: 1,
       image: "/icons/icon1.png",
       title: "Best prices and offers",
-      subtitle: "Orders $50 or more",
+      subtitle: "Orders $30 or more",
     },
     {
       id: 2,
@@ -46,7 +46,7 @@ const Advantage: React.FC = () => {
       id: 6,
       image: "/icons/icon6.png",
       title: "Great Daily Deals",
-      subtitle: "Exclusive discounts every day",
+      subtitle: "Exclusive discounts",
   },
   ];
 
