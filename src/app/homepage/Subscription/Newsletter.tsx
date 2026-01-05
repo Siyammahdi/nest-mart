@@ -35,7 +35,6 @@ const Newsletter = () => {
                 </div>
             </div>
 
-            {/* Optional Overlay */}
             <div className="absolute top-0 left-0 w-full h-full bg-white/20 z-0 rounded-lg" />
         </section>
     );
